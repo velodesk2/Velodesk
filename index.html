@@ -1,0 +1,2098 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VeloDesk — E-Business &amp; Support Partner | Next-Gen Creative Ad Studio</title>
+  <meta name="description" content="FOCUS ON YOUR BUSINESS, WE HANDLE YOUR PAGE. VeloDesk is your ultra-luxury creative ad studio & e-business partner — Daily Product Design, Reels, Fast Inbox Reply, Call Center & Daily Sales Report at 3,000 BDT/Month. Get 3 Days Free Trial." />
+
+  <!-- Google Fonts: Syne (Editorial Display), Space Grotesk (Tech Display), Plus Jakarta Sans (Clean UI), Hind Siliguri (Crisp Bangla) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Luxury Palette & Typography Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            void: {
+              950: '#04070F',
+              900: '#070C18',
+              850: '#0A1224',
+              800: '#0E1830',
+              700: '#162547',
+            },
+            gold: {
+              DEFAULT: '#F6C756',
+              bright: '#FFD66B',
+              deep: '#D99B26',
+            },
+            cyanx: {
+              DEFAULT: '#2EE8FF',
+              bright: '#6BF0FF',
+              deep: '#00B8D9',
+            }
+          },
+          fontFamily: {
+            editorial: ['"Syne"', '"Hind Siliguri"', 'sans-serif'],
+            tech: ['"Space Grotesk"', '"Hind Siliguri"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', '"Hind Siliguri"', 'sans-serif'],
+          },
+          boxShadow: {
+            'gold-luxe': '0 0 36px -6px rgba(246, 199, 86, 0.48)',
+            'cyan-luxe': '0 0 34px -6px rgba(46, 232, 255, 0.48)',
+            'obsidian-deep': '0 26px 70px -18px rgba(0, 0, 0, 0.85)',
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom Ultra-Luxury Editorial & Interactive Effects -->
+  <style>
+    :root {
+      --bg-void: #04070F;
+      --gold: #F6C756;
+      --cyan: #2EE8FF;
+    }
+
+    html, body {
+      background-color: #04070F;
+      color: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', 'Hind Siliguri', sans-serif;
+      overflow-x: hidden;
+    }
+
+    body.lang-bn {
+      font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
+    }
+    body.lang-bn .font-editorial,
+    body.lang-bn .font-tech {
+      font-family: 'Hind Siliguri', 'Space Grotesk', sans-serif;
+      letter-spacing: -0.01em;
+    }
+
+    /* Subtle Architectural Grid Layer (strictly behind content at z-0) */
+    .arch-grid {
+      background-size: 56px 56px;
+      background-image:
+        linear-gradient(to right, rgba(46, 232, 255, 0.055) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(246, 199, 86, 0.045) 1px, transparent 1px);
+      mask-image: radial-gradient(ellipse 90% 75% at 50% 25%, #000 45%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 90% 75% at 50% 25%, #000 45%, transparent 100%);
+    }
+
+    /* Razor-Sharp Hero Gradient Accent (High-Legibility Cyan to Champagne Gold) */
+    .hero-luminous-gradient {
+      background: linear-gradient(95deg, #6BF0FF 0%, #2EE8FF 42%, #FFD66B 82%, #F6C756 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 0 22px rgba(46, 232, 255, 0.35));
+    }
+
+    /* Luxury Glass Surface */
+    .luxe-glass {
+      background: linear-gradient(155deg, rgba(16, 28, 56, 0.88) 0%, rgba(7, 12, 24, 0.96) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    /* Mouse-Tracking Radial Spotlight Card */
+    .spotlight-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.32s ease, box-shadow 0.32s ease;
+    }
+    .spotlight-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+      background: radial-gradient(
+        420px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(46, 232, 255, 0.16),
+        rgba(246, 199, 86, 0.08) 45%,
+        transparent 75%
+      );
+    }
+    .spotlight-card:hover::before {
+      opacity: 1;
+    }
+    .spotlight-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(46, 232, 255, 0.48);
+      box-shadow: 0 22px 50px -15px rgba(0, 0, 0, 0.8), 0 0 24px -8px rgba(46, 232, 255, 0.22);
+    }
+    .spotlight-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Infinite Editorial Marquee Ticker */
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 32s linear infinite;
+    }
+    .marquee-wrap:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    /* Animated Metallic Shimmer for Signature Black-Card Pricing Vault */
+    @keyframes metallicSweep {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .black-card-border {
+      background: linear-gradient(125deg, #F6C756 0%, #2EE8FF 32%, #1E293B 50%, #FFD66B 72%, #2EE8FF 100%);
+      background-size: 280% 280%;
+      animation: metallicSweep 7s ease infinite;
+    }
+    .black-card-surface {
+      background:
+        radial-gradient(circle at 88% 14%, rgba(246, 199, 86, 0.14) 0%, transparent 45%),
+        radial-gradient(circle at 12% 88%, rgba(46, 232, 255, 0.12) 0%, transparent 45%),
+        linear-gradient(160deg, #0B1224 0%, #050914 55%, #091020 100%);
+    }
+
+    /* 3D Command Suite Subtle Perspective */
+    .command-suite-wrap {
+      perspective: 1200px;
+    }
+    .command-suite-card {
+      transform-style: preserve-3d;
+      transition: transform 0.25s ease-out;
+    }
+
+    /* Subtle Pulse Line Animation for SVG Sales Chart */
+    @keyframes dashFlow {
+      0% { stroke-dashoffset: 320; }
+      100% { stroke-dashoffset: 0; }
+    }
+    .pulse-line {
+      stroke-dasharray: 320;
+      animation: dashFlow 2.6s ease-out forwards;
+    }
+
+    /* Studio Tab Active State */
+    .studio-tab-btn[data-active="true"] {
+      background: linear-gradient(90deg, rgba(46, 232, 255, 0.18), rgba(246, 199, 86, 0.14));
+      border-color: rgba(46, 232, 255, 0.65);
+      color: #FFFFFF;
+      box-shadow: 0 0 22px -6px rgba(46, 232, 255, 0.45);
+    }
+
+    /* FAQ Accordion Chevron */
+    .faq-chevron {
+      transition: transform 0.28s ease;
+    }
+    .faq-item[data-open="true"] .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    /* Toast Notification */
+    .toast-hidden {
+      opacity: 0;
+      transform: translate(-50%, 24px);
+      pointer-events: none;
+    }
+    .toast-visible {
+      opacity: 1;
+      transform: translate(-50%, 0);
+      pointer-events: auto;
+    }
+
+    /* Subtle Reveal on Scroll */
+    .reveal-section {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-void-950 text-white antialiased selection:bg-cyanx selection:text-void-950">
+
+  <!-- =========================================================================
+       1. FLOATING GLASSMORPHIC LUXURY NAVBAR
+       ========================================================================= -->
+  <header class="sticky top-0 z-50 w-full px-3 sm:px-6 pt-3">
+    <div class="max-w-7xl mx-auto rounded-2xl bg-[#070C18]/92 backdrop-blur-2xl border border-white/15 shadow-[0_14px_40px_rgba(0,0,0,0.65)]">
+      <div class="px-4 sm:px-6 h-18 sm:h-20 flex items-center justify-between gap-3">
+
+        <!-- Custom Futuristic VD VeloDesk Vector Emblem -->
+        <a href="#top" class="flex items-center gap-3 group shrink-0 focus:outline-none" aria-label="VeloDesk Home">
+          <svg class="w-11 h-9 sm:w-12 sm:h-10 shrink-0 drop-shadow-[0_0_14px_rgba(46,232,255,0.55)] transition-transform duration-300 group-hover:scale-105" viewBox="0 0 92 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="vdLuxeGrad" x1="6" y1="6" x2="86" y2="58" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#6BF0FF" />
+                <stop offset="52%" stop-color="#2EE8FF" />
+                <stop offset="100%" stop-color="#F6C756" />
+              </linearGradient>
+            </defs>
+            <!-- Velocity Accents -->
+            <line x1="2" y1="16" x2="17" y2="16" stroke="#6BF0FF" stroke-width="2.6" stroke-linecap="round" />
+            <line x1="6" y1="25" x2="20" y2="25" stroke="#2EE8FF" stroke-width="2.2" stroke-linecap="round" />
+            <line x1="3" y1="34" x2="22" y2="34" stroke="#F6C756" stroke-width="2.2" stroke-linecap="round" />
+            <!-- V Letterform -->
+            <path d="M19 10L35 54L48 20" stroke="url(#vdLuxeGrad)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round" />
+            <!-- D Letterform -->
+            <path d="M46 10H61C74.5 10 83 19 83 32C83 45 74.5 54 61 54H46V10Z" stroke="url(#vdLuxeGrad)" stroke-width="6" stroke-linejoin="round" />
+            <!-- Luminous Chat Spark -->
+            <path d="M54 25C54 22.5 56 20.5 58.6 20.5H66.4C69 20.5 71 22.5 71 25V32.2C71 34.8 69 36.8 66.4 36.8H60.8L56 41V36.8H58.6C56 36.8 54 34.8 54 32.2V25Z" fill="#FFFFFF" />
+            <circle cx="59.2" cy="28.7" r="1.7" fill="#04070F" />
+            <circle cx="62.7" cy="28.7" r="1.7" fill="#04070F" />
+            <circle cx="66.2" cy="28.7" r="1.7" fill="#04070F" />
+          </svg>
+          <div class="flex flex-col leading-none">
+            <span class="font-editorial text-xl sm:text-2xl font-extrabold tracking-tight">
+              <span class="text-cyanx">Velo</span><span class="text-white">Desk</span>
+            </span>
+            <span class="text-[9px] sm:text-[10px] font-bold tracking-[0.2em] text-gold-bright uppercase mt-1">
+              E-BUSINESS &amp; SUPPORT PARTNER
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Editorial Links -->
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-white">
+          <a href="#studio" class="hover:text-cyanx transition-colors" data-i18n="nav_showcase">Showcase</a>
+          <a href="#services" class="hover:text-cyanx transition-colors" data-i18n="nav_services">Services</a>
+          <a href="#transformation" class="hover:text-cyanx transition-colors" data-i18n="nav_transform">Transformation</a>
+          <a href="#pricing" class="hover:text-cyanx transition-colors" data-i18n="nav_pricing">Pricing</a>
+          <a href="#trial" class="hover:text-cyanx transition-colors" data-i18n="nav_trial">Trial</a>
+        </nav>
+
+        <!-- Right Controls: EN | বাংলা Switcher + Luminous CTA + Mobile Toggle -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <!-- Language Toggle Pill -->
+          <div class="inline-flex items-center rounded-full bg-void-800 p-1 border border-white/20" role="group" aria-label="Language Switcher">
+            <button id="btn-lang-en" type="button" onclick="setLanguage('en')" class="px-2.5 sm:px-3 py-1 text-xs font-extrabold rounded-full transition-all bg-cyanx text-void-950 shadow-cyan-luxe">
+              EN
+            </button>
+            <button id="btn-lang-bn" type="button" onclick="setLanguage('bn')" class="px-2.5 sm:px-3 py-1 text-xs font-extrabold rounded-full transition-all text-white hover:text-cyanx">
+              বাংলা
+            </button>
+          </div>
+
+          <!-- Luminous 3-Day Free Trial CTA -->
+          <a href="#trial" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-gold-bright via-gold to-gold-deep text-void-950 text-xs sm:text-sm font-extrabold shadow-gold-luxe hover:brightness-110 transition-all" data-i18n="nav_cta">
+            3-Day Free Trial
+          </a>
+
+          <!-- Mobile Drawer Trigger -->
+          <button id="mobile-menu-btn" type="button" class="lg:hidden p-2.5 rounded-xl bg-void-800 border border-white/20 text-white hover:text-cyanx transition-colors" aria-label="Toggle Menu" aria-expanded="false">
+            <svg id="icon-menu-open" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="icon-menu-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-white/15 px-4 pt-3 pb-5 space-y-1.5">
+        <a href="#studio" class="mobile-nav-link block px-4 py-3 rounded-xl text-white font-semibold hover:bg-void-800 hover:text-cyanx" data-i18n="nav_showcase">Showcase</a>
+        <a href="#services" class="mobile-nav-link block px-4 py-3 rounded-xl text-white font-semibold hover:bg-void-800 hover:text-cyanx" data-i18n="nav_services">Services</a>
+        <a href="#transformation" class="mobile-nav-link block px-4 py-3 rounded-xl text-white font-semibold hover:bg-void-800 hover:text-cyanx" data-i18n="nav_transform">Transformation</a>
+        <a href="#pricing" class="mobile-nav-link block px-4 py-3 rounded-xl text-white font-semibold hover:bg-void-800 hover:text-cyanx" data-i18n="nav_pricing">Pricing</a>
+        <a href="#trial" class="mobile-nav-link block px-4 py-3 rounded-xl text-white font-semibold hover:bg-void-800 hover:text-cyanx" data-i18n="nav_trial">Trial</a>
+        <div class="pt-2">
+          <a href="#trial" class="mobile-nav-link flex items-center justify-center w-full px-5 py-3.5 rounded-xl bg-gradient-to-r from-gold-bright to-gold text-void-950 font-extrabold shadow-gold-luxe" data-i18n="nav_cta">
+            3-Day Free Trial
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. EDITORIAL FUTURISTIC HERO SECTION
+       ========================================================================= -->
+  <section id="top" class="relative overflow-hidden bg-void-950 pt-10 pb-20 lg:pt-16 lg:pb-28">
+    <!-- Strictly z-0 Background Orbs & Architectural Grid (Zero obstruction of text) -->
+    <div class="absolute inset-0 z-0 arch-grid pointer-events-none"></div>
+    <div class="absolute -top-32 -left-24 z-0 w-[28rem] h-[28rem] rounded-full bg-cyanx/10 blur-[130px] pointer-events-none"></div>
+    <div class="absolute -bottom-24 -right-24 z-0 w-[28rem] h-[28rem] rounded-full bg-gold/10 blur-[130px] pointer-events-none"></div>
+
+    <!-- Foreground Content Strictly z-10 -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+
+        <!-- Left Editorial Copy Column -->
+        <div class="lg:col-span-7 text-center lg:text-left">
+          <!-- Status Badge -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-void-850 border border-cyanx/50 text-cyanx-bright text-[11px] sm:text-xs font-extrabold tracking-[0.16em] uppercase mb-6 shadow-[0_0_24px_rgba(46,232,255,0.18)]">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyanx opacity-85"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyanx"></span>
+            </span>
+            <span data-i18n="hero_badge">NEXT-GEN E-BUSINESS &amp; CREATIVE AD STUDIO • DHAKA</span>
+          </div>
+
+          <!-- Massive Razor-Sharp Headline -->
+          <h1 class="font-editorial text-4xl sm:text-5xl lg:text-[3.7rem] font-extrabold tracking-tight leading-[1.09] mb-6">
+            <span class="block text-white" data-i18n="hero_h1_line1">FOCUS ON YOUR BUSINESS,</span>
+            <span class="block mt-2 hero-luminous-gradient" data-i18n="hero_h1_line2">WE HANDLE YOUR PAGE</span>
+          </h1>
+
+          <!-- High-Contrast Agency Subcopy -->
+          <p class="text-base sm:text-lg text-[#E2E8F0] max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8" data-i18n="hero_sub">
+            Transform your Facebook &amp; online store into an unmistakable luxury brand. We deliver scroll-stopping ad visuals, viral daily reels, persuasive copywriting, lightning-fast inbox replies, and phone order confirmation — engineered for maximum daily sales.
+          </p>
+
+          <!-- Primary & Secondary Luxury CTAs -->
+          <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3.5 mb-8">
+            <a href="#trial" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-gradient-to-r from-gold-bright via-gold to-cyanx text-void-950 font-extrabold text-base shadow-gold-luxe hover:brightness-110 hover:-translate-y-0.5 transition-all">
+              <span data-i18n="hero_cta_primary">Start 3-Day Free Trial</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+            </a>
+
+            <a href="https://www.facebook.com/share/1CNk6QyQMC/" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl luxe-glass border border-cyanx/50 text-white font-bold text-base hover:border-cyanx hover:bg-cyanx/10 transition-all">
+              <svg class="w-5 h-5 text-cyanx" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.145 2 11.259c0 2.913 1.454 5.512 3.726 7.21V22l3.405-1.869c.909.252 1.872.388 2.869.388 5.523 0 10-4.145 10-9.26C22 6.145 17.523 2 12 2zm1.002 12.463l-2.548-2.718-4.97 2.718 5.468-5.804 2.61 2.718 4.908-2.718-5.468 5.804z" /></svg>
+              <span data-i18n="hero_cta_fb">Message on Facebook</span>
+            </a>
+
+            <a href="tel:+8801516120012" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-4 rounded-2xl bg-void-850 border border-gold/50 text-gold-bright font-extrabold text-sm sm:text-base hover:bg-gold/15 transition-all">
+              <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              <span>01516120012</span>
+            </a>
+          </div>
+
+          <!-- Editorial Proof Strip -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2.5 text-xs sm:text-sm font-bold text-[#E2E8F0]">
+            <span class="inline-flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-gold shadow-gold-luxe"></span>
+              <span data-i18n="hero_strip_1">ALL-IN-ONE • 3,000 BDT / MONTH</span>
+            </span>
+            <span class="inline-flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-cyanx shadow-cyan-luxe"></span>
+              <span data-i18n="hero_strip_2">GET 3 DAYS FREE TRIAL — ZERO ADVANCE</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Right Interactive 3D Centerpiece: VeloDesk Creative Command Suite -->
+        <div class="lg:col-span-5 command-suite-wrap">
+          <div id="hero-command-card" class="command-suite-card spotlight-card luxe-glass rounded-[2rem] p-5 sm:p-6 shadow-obsidian-deep border border-white/20">
+            <!-- Studio Top Bar -->
+            <div class="flex items-center justify-between pb-4 mb-5 border-b border-white/15">
+              <div class="flex items-center gap-3">
+                <div class="flex gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-gold"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-cyanx"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                </div>
+                <div>
+                  <p class="font-tech text-xs sm:text-sm font-bold tracking-wider text-white uppercase" data-i18n="cmd_title">VeloDesk Creative Command Suite</p>
+                  <p class="text-[11px] text-[#E2E8F0]" data-i18n="cmd_sub">Live Ad Studio &amp; Sales Telemetry</p>
+                </div>
+              </div>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/50 text-emerald-300 text-[10px] font-extrabold uppercase tracking-wider">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span data-i18n="cmd_live">ACTIVE</span>
+              </span>
+            </div>
+
+            <!-- 3 High-Impact Animated Metric Tiles -->
+            <div class="grid grid-cols-3 gap-2.5 mb-5">
+              <div class="p-3 rounded-2xl bg-void-950/90 border border-gold/35">
+                <p class="text-[10px] font-bold uppercase tracking-wider text-[#E2E8F0]" data-i18n="cmd_m1_lbl">Ad Quality</p>
+                <p class="font-tech text-xl sm:text-2xl font-extrabold text-gold-bright mt-1">99.4%</p>
+                <p class="text-[10px] font-semibold text-gold mt-0.5" data-i18n="cmd_m1_sub">Studio Grade</p>
+              </div>
+              <div class="p-3 rounded-2xl bg-void-950/90 border border-cyanx/35">
+                <p class="text-[10px] font-bold uppercase tracking-wider text-[#E2E8F0]" data-i18n="cmd_m2_lbl">Inbox Reply</p>
+                <p class="font-tech text-xl sm:text-2xl font-extrabold text-cyanx-bright mt-1">&lt;45s</p>
+                <p class="text-[10px] font-semibold text-emerald-300 mt-0.5" data-i18n="cmd_m2_sub">Fast Closing</p>
+              </div>
+              <div class="p-3 rounded-2xl bg-void-950/90 border border-white/20">
+                <p class="text-[10px] font-bold uppercase tracking-wider text-[#E2E8F0]" data-i18n="cmd_m3_lbl">Daily Reels</p>
+                <p class="font-tech text-xl sm:text-2xl font-extrabold text-white mt-1" data-i18n="cmd_m3_val">READY</p>
+                <p class="text-[10px] font-semibold text-cyanx mt-0.5" data-i18n="cmd_m3_sub">4K Motion</p>
+              </div>
+            </div>
+
+            <!-- Live Sales Pulse SVG Chart -->
+            <div class="p-4 rounded-2xl bg-void-950/90 border border-white/15 mb-4">
+              <div class="flex items-center justify-between mb-3">
+                <div>
+                  <p class="text-xs font-bold text-white" data-i18n="cmd_chart_t">Live Sales Pulse</p>
+                  <p class="text-[11px] text-[#E2E8F0]" data-i18n="cmd_chart_s">Confirmed Orders &amp; Ad ROAS Trend</p>
+                </div>
+                <span class="px-2.5 py-1 rounded-lg bg-cyanx/15 border border-cyanx/40 text-cyanx-bright text-xs font-extrabold">+248%</span>
+              </div>
+              <svg class="w-full h-24 overflow-visible" viewBox="0 0 320 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="pulseFill" x1="0" y1="0" x2="0" y2="90" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#2EE8FF" stop-opacity="0.34" />
+                    <stop offset="100%" stop-color="#2EE8FF" stop-opacity="0" />
+                  </linearGradient>
+                  <linearGradient id="pulseStroke" x1="0" y1="45" x2="320" y2="10" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#2EE8FF" />
+                    <stop offset="65%" stop-color="#6BF0FF" />
+                    <stop offset="100%" stop-color="#F6C756" />
+                  </linearGradient>
+                </defs>
+                <!-- Subtle horizontal grid lines -->
+                <line x1="0" y1="22" x2="320" y2="22" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4 4" />
+                <line x1="0" y1="54" x2="320" y2="54" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4 4" />
+                <!-- Area -->
+                <path d="M0 72 C32 68, 48 56, 78 58 C108 60, 128 36, 160 40 C192 44, 214 22, 248 24 C276 26, 294 10, 320 8 L320 90 L0 90 Z" fill="url(#pulseFill)" />
+                <!-- Animated Stroke -->
+                <path class="pulse-line" d="M0 72 C32 68, 48 56, 78 58 C108 60, 128 36, 160 40 C192 44, 214 22, 248 24 C276 26, 294 10, 320 8" stroke="url(#pulseStroke)" stroke-width="3.2" stroke-linecap="round" />
+                <!-- Glowing End Dot -->
+                <circle cx="320" cy="8" r="5" fill="#F6C756" />
+                <circle cx="320" cy="8" r="10" fill="#F6C756" fill-opacity="0.28" />
+              </svg>
+            </div>
+
+            <!-- Live Operations Strip -->
+            <div class="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-gradient-to-r from-cyanx/15 via-void-900 to-gold/15 border border-white/15">
+              <span class="text-xs font-bold text-white" data-i18n="cmd_foot_l">All-In-One Agency Retainer</span>
+              <span class="font-tech text-xs sm:text-sm font-extrabold text-gold-bright" data-i18n="cmd_foot_r">3,000 BDT / MO</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. INFINITE LUXURY MARQUEE TICKER
+       ========================================================================= -->
+  <div class="marquee-wrap relative z-10 py-4 bg-void-900 border-y border-white/15 overflow-hidden">
+    <div class="marquee-track flex items-center gap-8 text-xs sm:text-sm font-tech font-bold tracking-[0.18em] uppercase">
+      <!-- Track Copy 1 -->
+      <div class="flex items-center gap-8 shrink-0">
+        <span class="text-gold-bright" data-i18n="mq_1">PREMIUM AD CREATIVES</span>
+        <span class="text-cyanx">✦</span>
+        <span class="text-white" data-i18n="mq_2">HIGH-CONVERTING COPYWRITING</span>
+        <span class="text-gold">✦</span>
+        <span class="text-cyanx-bright" data-i18n="mq_3">DAILY PRODUCT DESIGN</span>
+        <span class="text-gold">✦</span>
+        <span class="text-white" data-i18n="mq_4">VIRAL REELS EDITING</span>
+        <span class="text-cyanx">✦</span>
+        <span class="text-gold-bright" data-i18n="mq_5">FAST INBOX &amp; COMMENT REPLY</span>
+        <span class="text-cyanx">✦</span>
+        <span class="text-white" data-i18n="mq_6">CALL CENTER SUPPORT</span>
+        <span class="text-gold">✦</span>
+        <span class="text-cyanx-bright" data-i18n="mq_7">DAILY SALES REPORTS</span>
+        <span class="text-gold">✦</span>
+      </div>
+      <!-- Track Copy 2 (Seamless Loop) -->
+      <div class="flex items-center gap-8 shrink-0" aria-hidden="true">
+        <span class="text-gold-bright" data-i18n="mq_1">PREMIUM AD CREATIVES</span>
+        <span class="text-cyanx">✦</span>
+        <span class="text-white" data-i18n="mq_2">HIGH-CONVERTING COPYWRITING</span>
+        <span class="text-gold">✦</span>
+        <span class="text-cyanx-bright" data-i18n="mq_3">DAILY PRODUCT DESIGN</span>
+        <span class="text-gold">✦</span>
+        <span class="text-white" data-i18n="mq_4">VIRAL REELS EDITING</span>
+        <span class="text-cyanx">✦</span>
+        <span class="text-gold-bright" data-i18n="mq_5">FAST INBOX &amp; COMMENT REPLY</span>
+        <span class="text-cyanx">✦</span>
+        <span class="text-white" data-i18n="mq_6">CALL CENTER SUPPORT</span>
+        <span class="text-gold">✦</span>
+        <span class="text-cyanx-bright" data-i18n="mq_7">DAILY SALES REPORTS</span>
+        <span class="text-gold">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       4. UNCOMMON SECTION — "INSIDE OUR CREATIVE STUDIO" (4-TAB SHOWCASE)
+       ========================================================================= -->
+  <section id="studio" class="reveal-section relative py-20 lg:py-28 bg-void-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Editorial Heading -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-gold/15 border border-gold/45 text-gold-bright font-tech font-bold text-xs uppercase tracking-[0.2em] mb-4" data-i18n="studio_tag">
+          INSIDE OUR CREATIVE STUDIO
+        </span>
+        <h2 class="font-editorial text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4" data-i18n="studio_title">
+          See Why Brands Look Unmistakably Elite With Us
+        </h2>
+        <p class="text-[#E2E8F0] text-base sm:text-lg leading-relaxed" data-i18n="studio_sub">
+          Explore the exact creative architecture, motion rhythm, ad copywriting, and sales engine we craft for your business every single day.
+        </p>
+      </div>
+
+      <!-- Interactive 4 Studio Tabs -->
+      <div class="flex flex-wrap justify-center gap-2.5 sm:gap-3 mb-10" role="tablist" aria-label="Creative Studio Showcase">
+        <button type="button" class="studio-tab-btn px-4 sm:px-5 py-3 rounded-xl bg-void-850 border border-white/15 text-xs sm:text-sm font-bold text-[#E2E8F0] hover:text-white transition-all" data-tab="ads" data-active="true" role="tab" aria-selected="true" data-i18n="tab_1">
+          01. Luxury Product Ads
+        </button>
+        <button type="button" class="studio-tab-btn px-4 sm:px-5 py-3 rounded-xl bg-void-850 border border-white/15 text-xs sm:text-sm font-bold text-[#E2E8F0] hover:text-white transition-all" data-tab="reels" data-active="false" role="tab" aria-selected="false" data-i18n="tab_2">
+          02. Viral Reels &amp; Motion
+        </button>
+        <button type="button" class="studio-tab-btn px-4 sm:px-5 py-3 rounded-xl bg-void-850 border border-white/15 text-xs sm:text-sm font-bold text-[#E2E8F0] hover:text-white transition-all" data-tab="copy" data-active="false" role="tab" aria-selected="false" data-i18n="tab_3">
+          03. Persuasive Ad Copy
+        </button>
+        <button type="button" class="studio-tab-btn px-4 sm:px-5 py-3 rounded-xl bg-void-850 border border-white/15 text-xs sm:text-sm font-bold text-[#E2E8F0] hover:text-white transition-all" data-tab="engine" data-active="false" role="tab" aria-selected="false" data-i18n="tab_4">
+          04. Inbox &amp; Sales Engine
+        </button>
+      </div>
+
+      <!-- Tab Content Container -->
+      <div class="luxe-glass rounded-[2rem] p-6 sm:p-10 border border-white/15 shadow-obsidian-deep">
+
+        <!-- TAB 1: LUXURY PRODUCT ADS -->
+        <div id="panel-ads" class="studio-panel grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <!-- Mockup Card -->
+          <div class="lg:col-span-6">
+            <div class="relative rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-[#0F1B38] via-[#070E20] to-[#13192C] border border-gold/40 shadow-gold-luxe overflow-hidden">
+              <div class="flex items-center justify-between mb-6">
+                <span class="px-3 py-1 rounded-full bg-gold/20 border border-gold/50 text-gold-bright text-[11px] font-extrabold tracking-widest uppercase" data-i18n="t1_badge">SPONSORED AD CREATIVE</span>
+                <span class="text-xs font-tech font-bold text-cyanx">1080 × 1350 HD</span>
+              </div>
+              <!-- Visual Product Stage -->
+              <div class="relative rounded-2xl bg-void-950/90 border border-white/15 p-6 mb-5 flex flex-col sm:flex-row items-center gap-6">
+                <!-- Stylized Luxury Watch / Perfume Vector Emblem -->
+                <div class="w-28 h-28 rounded-2xl bg-gradient-to-br from-gold/25 via-void-850 to-cyanx/25 border border-gold/45 flex items-center justify-center shrink-0 shadow-gold-luxe">
+                  <svg class="w-16 h-16 text-gold-bright" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="7" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l2.5 1.5M9 2h6M9 22h6" />
+                  </svg>
+                </div>
+                <div class="text-center sm:text-left">
+                  <p class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-cyanx mb-1" data-i18n="t1_kicker">LIMITED EDITION DROP</p>
+                  <h4 class="font-editorial text-2xl font-extrabold text-white leading-tight mb-2" data-i18n="t1_prod">Obsidian Chrono Luxe</h4>
+                  <div class="flex items-center justify-center sm:justify-start gap-2.5">
+                    <span class="px-3 py-1 rounded-lg bg-gold text-void-950 font-extrabold text-xs" data-i18n="t1_offer">30% OFF TODAY</span>
+                    <span class="text-xs font-bold text-[#E2E8F0]" data-i18n="t1_cod">Cash On Delivery</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center justify-between text-xs font-bold">
+                <span class="text-emerald-300" data-i18n="t1_stat1">● CTR +3.8x Higher</span>
+                <span class="text-gold-bright" data-i18n="t1_stat2">Typography &amp; Grid Precision</span>
+              </div>
+            </div>
+          </div>
+          <!-- Editorial Explanation -->
+          <div class="lg:col-span-6 space-y-5">
+            <h3 class="font-editorial text-2xl sm:text-3xl font-extrabold text-white" data-i18n="t1_h3">Scroll-Stopping Luxury Product Ads</h3>
+            <p class="text-[#E2E8F0] text-sm sm:text-base leading-relaxed" data-i18n="t1_p">
+              Ordinary product photos get scrolled past in 0.5 seconds. Our art directors apply studio lighting treatments, sharp typographic hierarchy, and luxury color grading so your product immediately commands premium price and buyer trust.
+            </p>
+            <ul class="space-y-3 text-sm sm:text-base text-white font-semibold">
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-gold/25 text-gold-bright flex items-center justify-center text-xs">✓</span>
+                <span data-i18n="t1_b1">Custom brand-matched color &amp; typography system</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-gold/25 text-gold-bright flex items-center justify-center text-xs">✓</span>
+                <span data-i18n="t1_b2">Designed specifically for Facebook &amp; Instagram ad conversion</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-gold/25 text-gold-bright flex items-center justify-center text-xs">✓</span>
+                <span data-i18n="t1_b3">Fresh daily creatives published consistently on your page</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- TAB 2: VIRAL REELS & MOTION -->
+        <div id="panel-reels" class="studio-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-6 flex justify-center">
+            <!-- Sleek Vertical Reel Frame Mockup -->
+            <div class="w-full max-w-sm rounded-3xl p-5 bg-void-950 border border-cyanx/45 shadow-cyan-luxe">
+              <div class="flex items-center justify-between text-xs font-bold mb-4">
+                <span class="px-2.5 py-1 rounded-md bg-cyanx/20 text-cyanx-bright uppercase tracking-wider">9:16 REELS ENGINE</span>
+                <span class="text-gold-bright font-tech">00:18 / 00:30</span>
+              </div>
+              <!-- Motion Stage -->
+              <div class="rounded-2xl bg-gradient-to-b from-void-800 to-void-950 border border-white/15 p-5 mb-4 space-y-3">
+                <div class="flex items-center justify-between p-3 rounded-xl bg-cyanx/15 border border-cyanx/40">
+                  <span class="text-xs font-extrabold text-cyanx-bright">00–03s</span>
+                  <span class="text-xs font-bold text-white" data-i18n="t2_s1">Pattern-Interrupt Visual Hook</span>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/15">
+                  <span class="text-xs font-extrabold text-gold-bright">04–22s</span>
+                  <span class="text-xs font-bold text-white" data-i18n="t2_s2">Dynamic Cuts + Kinetic Captions</span>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-xl bg-gold/15 border border-gold/45">
+                  <span class="text-xs font-extrabold text-gold-bright">23–30s</span>
+                  <span class="text-xs font-bold text-white" data-i18n="t2_s3">Urgent "Inbox Now" Offer CTA</span>
+                </div>
+              </div>
+              <!-- Timeline Scrubber -->
+              <div class="space-y-1.5">
+                <div class="h-2 w-full rounded-full bg-void-800 overflow-hidden">
+                  <div class="h-full w-3/5 rounded-full bg-gradient-to-r from-cyanx to-gold"></div>
+                </div>
+                <div class="flex justify-between text-[11px] font-bold text-[#E2E8F0]">
+                  <span data-i18n="t2_stat1">Avg Watch Time: 92%</span>
+                  <span class="text-cyanx-bright" data-i18n="t2_stat2">Trending Audio Sync</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-6 space-y-5">
+            <h3 class="font-editorial text-2xl sm:text-3xl font-extrabold text-white" data-i18n="t2_h3">High-Retention Viral Reels &amp; Motion Ads</h3>
+            <p class="text-[#E2E8F0] text-sm sm:text-base leading-relaxed" data-i18n="t2_p">
+              Short-form video drives the highest organic reach today. Send us simple raw phone clips of your products—our editors turn them into cinematic, fast-paced reels with bold Bangla/English captions, sound design, and magnetic pacing.
+            </p>
+            <ul class="space-y-3 text-sm sm:text-base text-white font-semibold">
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-cyanx/25 text-cyanx-bright flex items-center justify-center text-xs">✓</span>
+                <span data-i18n="t2_b1">3-second scroll-stopping hook structure built into every video</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-cyanx/25 text-cyanx-bright flex items-center justify-center text-xs">✓</span>
+                <span data-i18n="t2_b2">Crisp motion graphics, price tags &amp; smooth transitions</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-cyanx/25 text-cyanx-bright flex items-center justify-center text-xs">✓</span>
+                <span data-i18n="t2_b3">Optimized for both organic Reels virality and paid Meta ads</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- TAB 3: PERSUASIVE AD COPY -->
+        <div id="panel-copy" class="studio-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-6">
+            <div class="rounded-3xl p-6 bg-void-950 border border-gold/40 space-y-4">
+              <div class="flex items-center justify-between border-b border-white/15 pb-3">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-gold-bright" data-i18n="t3_badge">CONVERSION COPYWRITING BLUEPRINT</span>
+                <span class="text-[11px] font-bold text-emerald-300">BN / EN</span>
+              </div>
+              <div class="p-3.5 rounded-xl bg-cyanx/10 border-l-4 border-cyanx">
+                <p class="text-[10px] font-extrabold uppercase tracking-wider text-cyanx-bright mb-1" data-i18n="t3_c1_lbl">1. SCROLL-STOPPING HOOK</p>
+                <p class="text-sm font-bold text-white" data-i18n="t3_c1_txt">"Still losing customers to pages with weaker products? Make your first impression unforgettable."</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-white/5 border-l-4 border-gold">
+                <p class="text-[10px] font-extrabold uppercase tracking-wider text-gold-bright mb-1" data-i18n="t3_c2_lbl">2. DESIRE &amp; TRUST TRIGGER</p>
+                <p class="text-sm text-[#E2E8F0]" data-i18n="t3_c2_txt">Crafted with precision finishing, verified quality guarantee, and doorstep cash-on-delivery across Bangladesh.</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-emerald-500/10 border-l-4 border-emerald-400">
+                <p class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-300 mb-1" data-i18n="t3_c3_lbl">3. FRICTIONLESS CTA</p>
+                <p class="text-sm font-bold text-white" data-i18n="t3_c3_txt">"Tap Send Message now with your phone number &amp; address — our team confirms in under 2 minutes."</p>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-6 space-y-5">
+            <h3 class="font-editorial text-2xl sm:text-3xl font-extrabold text-white" data-i18n="t3_h3">Words Engineered to Trigger Instant Orders</h3>
+            <p class="text-[#E2E8F0] text-sm sm:text-base leading-relaxed" data-i18n="t3_p">
+              Great design grabs attention, but elite copywriting closes the sale. We write natural, persuasive Bangla and English captions that answer buyer objections before they even ask.
+            </p>
+            <ul class="space-y-3 text-sm sm:text-base text-white font-semibold">
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-gold/25 text-gold-bright flex items-center justify-center text-xs">✓</span>
+                <span data-i18n="t3_b1">Psychology-backed hooks, bullet benefits &amp; urgency triggers</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-gold/25 text-gold-bright flex items-center justify-center text-xs">✓</span>
+                <span data-i18n="t3_b2">Polished, error-free Bangla &amp; English brand voice</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-gold/25 text-gold-bright flex items-center justify-center text-xs">✓</span>
+                <span data-i18n="t3_b3">Strategic hashtags &amp; ad-compliant formatting</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- TAB 4: INBOX & SALES ENGINE -->
+        <div id="panel-engine" class="studio-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-6">
+            <div class="rounded-3xl p-6 bg-void-950 border border-cyanx/40 space-y-4">
+              <div class="flex items-center justify-between border-b border-white/15 pb-3">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-cyanx-bright" data-i18n="t4_badge">LIVE INBOX TO ORDER PIPELINE</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[11px] font-bold">24/7 READY</span>
+              </div>
+              <!-- Simulated Chat -->
+              <div class="space-y-2.5 text-xs sm:text-sm">
+                <div class="p-3 rounded-2xl rounded-tl-none bg-void-800 text-[#E2E8F0] max-w-[85%]" data-i18n="t4_m1">
+                  Customer: "Price koto? Dhaka te delivery koto din lagbe?"
+                </div>
+                <div class="p-3 rounded-2xl rounded-tr-none bg-cyanx/20 border border-cyanx/45 text-white ml-auto max-w-[88%]" data-i18n="t4_m2">
+                  VeloDesk Agent (32s): "Assalamu Alaikum! Offer price 1,450৳, Dhaka delivery 24 hrs. Order confirm korte apnar naam, phone &amp; address din."
+                </div>
+              </div>
+              <!-- Mini Sales Report Summary -->
+              <div class="grid grid-cols-3 gap-2 pt-2 border-t border-white/15 text-center">
+                <div class="p-2.5 rounded-xl bg-void-850">
+                  <p class="text-[10px] text-[#E2E8F0] uppercase font-bold" data-i18n="t4_k1">Orders</p>
+                  <p class="font-tech text-lg font-extrabold text-white">42</p>
+                </div>
+                <div class="p-2.5 rounded-xl bg-void-850">
+                  <p class="text-[10px] text-[#E2E8F0] uppercase font-bold" data-i18n="t4_k2">Call Verified</p>
+                  <p class="font-tech text-lg font-extrabold text-emerald-300">100%</p>
+                </div>
+                <div class="p-2.5 rounded-xl bg-void-850">
+                  <p class="text-[10px] text-[#E2E8F0] uppercase font-bold" data-i18n="t4_k3">Nightly Sheet</p>
+                  <p class="font-tech text-lg font-extrabold text-gold-bright">SENT</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-6 space-y-5">
+            <h3 class="font-editorial text-2xl sm:text-3xl font-extrabold text-white" data-i18n="t4_h3">Instant Inbox Closing &amp; Nightly Sales Reports</h3>
+            <p class="text-[#E2E8F0] text-sm sm:text-base leading-relaxed" data-i18n="t4_p">
+              Every delayed reply hands your customer to a competitor. Our trained support team responds within seconds, confirms orders by phone call to eliminate fake orders, and sends you a clean courier-ready sales sheet every night.
+            </p>
+            <ul class="space-y-3 text-sm sm:text-base text-white font-semibold">
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-emerald-400/25 text-emerald-300 flex items-center justify-center text-xs">✓</span>
+                <span data-i18n="t4_b1">Fast Messenger inbox &amp; post comment replies</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-emerald-400/25 text-emerald-300 flex items-center justify-center text-xs">✓</span>
+                <span data-i18n="t4_b2">Polite phone call center verification for every order</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-emerald-400/25 text-emerald-300 flex items-center justify-center text-xs">✓</span>
+                <span data-i18n="t4_b3">Transparent daily order &amp; revenue reporting</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. UNCOMMON SECTION — "THE VELODESK EFFECT" (BEFORE VS. AFTER TOGGLE)
+       ========================================================================= -->
+  <section id="transformation" class="reveal-section relative py-20 lg:py-28 bg-void-900 border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-cyanx/15 border border-cyanx/45 text-cyanx-bright font-tech font-bold text-xs uppercase tracking-[0.2em] mb-4" data-i18n="eff_tag">
+          THE VELODESK EFFECT
+        </span>
+        <h2 class="font-editorial text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4" data-i18n="eff_title">
+          See the Instant Page Transformation
+        </h2>
+        <p class="text-[#E2E8F0] text-base sm:text-lg" data-i18n="eff_sub">
+          Toggle below to compare an unmanaged struggling page against a VeloDesk-powered luxury brand presence.
+        </p>
+      </div>
+
+      <!-- Luxury Interactive Transformation Switch -->
+      <div class="flex justify-center mb-10">
+        <div class="inline-flex p-1.5 rounded-2xl bg-void-950 border border-white/20 shadow-obsidian-deep">
+          <button id="btn-mode-before" type="button" onclick="setTransformMode('before')" class="px-5 sm:px-7 py-3 rounded-xl text-xs sm:text-sm font-extrabold transition-all text-[#E2E8F0] hover:text-white" data-i18n="eff_btn_before">
+            Without VeloDesk
+          </button>
+          <button id="btn-mode-after" type="button" onclick="setTransformMode('after')" class="px-5 sm:px-7 py-3 rounded-xl text-xs sm:text-sm font-extrabold transition-all bg-gradient-to-r from-cyanx to-gold text-void-950 shadow-cyan-luxe" data-i18n="eff_btn_after">
+            With VeloDesk ✦
+          </button>
+        </div>
+      </div>
+
+      <!-- Transformation Matrix Card -->
+      <div id="transform-card" class="luxe-glass rounded-[2rem] p-6 sm:p-10 border border-cyanx/45 shadow-cyan-luxe transition-all duration-500">
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-white/15">
+          <div>
+            <span id="transform-badge" class="inline-block px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/50 text-emerald-300 text-xs font-extrabold uppercase tracking-wider mb-2" data-i18n="eff_after_badge">
+              LUXURY BRAND PRESENCE
+            </span>
+            <h3 id="transform-heading" class="font-editorial text-2xl sm:text-3xl font-extrabold text-white" data-i18n="eff_after_h">
+              With VeloDesk: Organized, Prestigious &amp; High-Converting
+            </h3>
+          </div>
+          <a href="#trial" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gold text-void-950 font-extrabold text-xs sm:text-sm hover:brightness-110 transition-all" data-i18n="eff_cta">
+            Experience Free Trial →
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <!-- Pillar 1: Visual Identity -->
+          <div class="p-5 rounded-2xl bg-void-950/85 border border-white/15">
+            <p class="text-xs font-tech font-bold uppercase tracking-wider text-cyanx-bright mb-2" data-i18n="eff_p1_lbl">Visual Identity</p>
+            <p id="eff-v1" class="text-sm sm:text-base font-bold text-white leading-relaxed" data-i18n="eff_after_1">
+              Cohesive, studio-grade luxury ad designs &amp; reels that make buyers trust your brand instantly.
+            </p>
+          </div>
+          <!-- Pillar 2: Content Consistency -->
+          <div class="p-5 rounded-2xl bg-void-950/85 border border-white/15">
+            <p class="text-xs font-tech font-bold uppercase tracking-wider text-gold-bright mb-2" data-i18n="eff_p2_lbl">Content Consistency</p>
+            <p id="eff-v2" class="text-sm sm:text-base font-bold text-white leading-relaxed" data-i18n="eff_after_2">
+              Daily scheduled product posts &amp; viral reels published like clockwork — zero silent days.
+            </p>
+          </div>
+          <!-- Pillar 3: Response Speed -->
+          <div class="p-5 rounded-2xl bg-void-950/85 border border-white/15">
+            <p class="text-xs font-tech font-bold uppercase tracking-wider text-emerald-300 mb-2" data-i18n="eff_p3_lbl">Customer Response</p>
+            <p id="eff-v3" class="text-sm sm:text-base font-bold text-white leading-relaxed" data-i18n="eff_after_3">
+              Instant inbox &amp; comment replies under 60 seconds plus polite phone call order confirmation.
+            </p>
+          </div>
+          <!-- Pillar 4: Sales Tracking -->
+          <div class="p-5 rounded-2xl bg-void-950/85 border border-white/15">
+            <p class="text-xs font-tech font-bold uppercase tracking-wider text-cyanx-bright mb-2" data-i18n="eff_p4_lbl">Sales Tracking</p>
+            <p id="eff-v4" class="text-sm sm:text-base font-bold text-white leading-relaxed" data-i18n="eff_after_4">
+              Crystal-clear nightly order &amp; revenue reports ready for immediate courier dispatch.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. ASYMMETRIC LUXURY BENTO GRID (5 CORE SERVICES)
+       ========================================================================= -->
+  <section id="services" class="reveal-section relative py-20 lg:py-28 bg-void-950 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
+        <div class="max-w-2xl">
+          <span class="inline-block px-4 py-1.5 rounded-full bg-gold/15 border border-gold/45 text-gold-bright font-tech font-bold text-xs uppercase tracking-[0.2em] mb-4" data-i18n="srv_tag">
+            5 CORE AGENCY SERVICES
+          </span>
+          <h2 class="font-editorial text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight" data-i18n="srv_title">
+            Your Entire E-Business Team, Unified in One Suite
+          </h2>
+        </div>
+        <p class="text-[#E2E8F0] text-sm sm:text-base max-w-md leading-relaxed" data-i18n="srv_sub">
+          Every pillar required to design, promote, respond, confirm, and report — executed daily with agency-level discipline.
+        </p>
+      </div>
+
+      <!-- Asymmetric 12-Col Luxury Bento Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
+
+        <!-- Service 1 (Wide Featured: 7 cols) -->
+        <div class="lg:col-span-7 spotlight-card luxe-glass rounded-3xl p-7 sm:p-9">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-bright to-gold-deep text-void-950 flex items-center justify-center shadow-gold-luxe">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            </div>
+            <span class="font-tech text-xs font-extrabold tracking-widest text-gold-bright px-3 py-1 rounded-full bg-gold/15 border border-gold/35">01 / CREATIVE</span>
+          </div>
+          <h3 class="font-editorial text-2xl font-extrabold text-white mb-3" data-i18n="s1_title">Daily Product Design &amp; Posts</h3>
+          <p class="text-[#E2E8F0] text-sm sm:text-base leading-relaxed" data-i18n="s1_desc">
+            Luxury product banners, sharp typography, and persuasive Bangla/English ad captions crafted and published every day so your page radiates authority and drives nonstop inquiries.
+          </p>
+        </div>
+
+        <!-- Service 2 (5 cols) -->
+        <div class="lg:col-span-5 spotlight-card luxe-glass rounded-3xl p-7 sm:p-9">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyanx-bright to-cyanx-deep text-void-950 flex items-center justify-center shadow-cyan-luxe">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+            </div>
+            <span class="font-tech text-xs font-extrabold tracking-widest text-cyanx-bright px-3 py-1 rounded-full bg-cyanx/15 border border-cyanx/35">02 / MOTION</span>
+          </div>
+          <h3 class="font-editorial text-2xl font-extrabold text-white mb-3" data-i18n="s2_title">Daily Reels &amp; Video Editing</h3>
+          <p class="text-[#E2E8F0] text-sm sm:text-base leading-relaxed" data-i18n="s2_desc">
+            High-retention short video ads and viral reels edited with kinetic captions, crisp cuts, and trending audio to multiply organic reach.
+          </p>
+        </div>
+
+        <!-- Service 3 (4 cols) -->
+        <div class="lg:col-span-4 spotlight-card luxe-glass rounded-3xl p-7">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-13 h-13 p-3 rounded-2xl bg-emerald-400/20 border border-emerald-400/50 text-emerald-300 flex items-center justify-center">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
+            </div>
+            <span class="font-tech text-xs font-extrabold text-emerald-300">03</span>
+          </div>
+          <h3 class="font-editorial text-xl font-extrabold text-white mb-3" data-i18n="s3_title">Fast Inbox &amp; Comment Reply</h3>
+          <p class="text-[#E2E8F0] text-sm leading-relaxed" data-i18n="s3_desc">
+            Ultra-fast, courteous, sales-focused Messenger and comment responses that turn curious visitors into confirmed buyers before they leave.
+          </p>
+        </div>
+
+        <!-- Service 4 (4 cols) -->
+        <div class="lg:col-span-4 spotlight-card luxe-glass rounded-3xl p-7">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-13 h-13 p-3 rounded-2xl bg-cyanx/20 border border-cyanx/50 text-cyanx-bright flex items-center justify-center">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+            </div>
+            <span class="font-tech text-xs font-extrabold text-cyanx-bright">04</span>
+          </div>
+          <h3 class="font-editorial text-xl font-extrabold text-white mb-3" data-i18n="s4_title">Customer Call Center Support</h3>
+          <p class="text-[#E2E8F0] text-sm leading-relaxed" data-i18n="s4_desc">
+            Dedicated phone order confirmation and polite address verification calls that cut return rates, prevent fake orders, and elevate brand trust.
+          </p>
+        </div>
+
+        <!-- Service 5 (4 cols) -->
+        <div class="lg:col-span-4 md:col-span-2 spotlight-card luxe-glass rounded-3xl p-7">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-13 h-13 p-3 rounded-2xl bg-gold/20 border border-gold/50 text-gold-bright flex items-center justify-center">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+            </div>
+            <span class="font-tech text-xs font-extrabold text-gold-bright">05</span>
+          </div>
+          <h3 class="font-editorial text-xl font-extrabold text-white mb-3" data-i18n="s5_title">Daily Order &amp; Sales Report</h3>
+          <p class="text-[#E2E8F0] text-sm leading-relaxed" data-i18n="s5_desc">
+            Clean, organized end-of-day sales and courier-ready order sheets delivered every night — showing exact counts, customer info, and total revenue.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. SIGNATURE "BLACK-CARD" PRICING VAULT
+       ========================================================================= -->
+  <section id="pricing" class="reveal-section relative py-20 lg:py-28 bg-void-900 border-t border-white/10 overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 w-[34rem] h-[34rem] rounded-full bg-gold/10 blur-[140px] pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-gold/15 border border-gold/45 text-gold-bright font-tech font-bold text-xs uppercase tracking-[0.2em] mb-4" data-i18n="price_tag">
+          SIGNATURE VIP MEMBERSHIP
+        </span>
+        <h2 class="font-editorial text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4" data-i18n="price_title">
+          One Exclusive All-In-One Retainer
+        </h2>
+        <p class="text-[#E2E8F0] text-base sm:text-lg" data-i18n="price_sub">
+          Full creative studio + dedicated sales &amp; call center operations — at a single transparent monthly rate.
+        </p>
+      </div>
+
+      <!-- Titanium/Gold Animated Shimmer Black-Card -->
+      <div class="max-w-2xl mx-auto p-[2px] rounded-[2.2rem] black-card-border shadow-obsidian-deep">
+        <div class="black-card-surface rounded-[2.1rem] p-7 sm:p-11">
+
+          <!-- Black-Card Top Metallic Header -->
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-7">
+            <div class="flex items-center gap-2.5">
+              <!-- Metallic Chip Graphic -->
+              <div class="w-9 h-7 rounded-md bg-gradient-to-br from-gold-bright via-gold to-gold-deep border border-white/40 flex items-center justify-center">
+                <div class="w-5 h-3.5 border border-void-950/40 rounded-sm"></div>
+              </div>
+              <span class="font-tech text-xs font-extrabold uppercase tracking-[0.2em] text-gold-bright" data-i18n="vc_tier">
+                VELODESK BLACK-CARD • ALL-IN-ONE
+              </span>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-cyanx/15 border border-cyanx/45 text-cyanx-bright text-[11px] font-extrabold uppercase tracking-wider" data-i18n="vc_no_hidden">
+              NO HIDDEN FEES
+            </span>
+          </div>
+
+          <!-- Bold Price Display -->
+          <div class="flex flex-wrap items-baseline gap-3 mb-5">
+            <span class="font-editorial text-4xl sm:text-6xl font-extrabold text-white tracking-tight" data-i18n="vc_price">3,000 BDT</span>
+            <span class="font-tech text-lg sm:text-xl font-bold text-gold-bright uppercase" data-i18n="vc_period">/ MONTH</span>
+          </div>
+
+          <!-- 3 Days Free Trial Highlight Strip -->
+          <div class="p-4 rounded-2xl bg-gradient-to-r from-cyanx/15 via-void-900 to-gold/15 border border-gold/45 flex items-center justify-center gap-2.5 text-center mb-8">
+            <span class="w-2.5 h-2.5 rounded-full bg-cyanx shadow-cyan-luxe shrink-0"></span>
+            <span class="font-tech text-xs sm:text-sm font-extrabold tracking-widest text-white uppercase" data-i18n="vc_offer">
+              GET 3 DAYS FREE TRIAL — INBOX NOW
+            </span>
+          </div>
+
+          <!-- All 5 Included Services with Glowing Checkmarks -->
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-9 text-sm sm:text-base">
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-cyanx/25 text-cyanx-bright flex items-center justify-center shrink-0 shadow-cyan-luxe">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              </span>
+              <span class="text-white font-semibold" data-i18n="s1_title">Daily Product Design &amp; Posts</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-cyanx/25 text-cyanx-bright flex items-center justify-center shrink-0 shadow-cyan-luxe">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              </span>
+              <span class="text-white font-semibold" data-i18n="s2_title">Daily Reels &amp; Video Editing</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-cyanx/25 text-cyanx-bright flex items-center justify-center shrink-0 shadow-cyan-luxe">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              </span>
+              <span class="text-white font-semibold" data-i18n="s3_title">Fast Inbox &amp; Comment Reply</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-cyanx/25 text-cyanx-bright flex items-center justify-center shrink-0 shadow-cyan-luxe">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              </span>
+              <span class="text-white font-semibold" data-i18n="s4_title">Customer Call Center Support</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-cyanx/25 text-cyanx-bright flex items-center justify-center shrink-0 shadow-cyan-luxe">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              </span>
+              <span class="text-white font-semibold" data-i18n="s5_title">Daily Order &amp; Sales Report</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-gold/25 text-gold-bright flex items-center justify-center shrink-0 shadow-gold-luxe">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              </span>
+              <span class="text-gold-bright font-semibold" data-i18n="vc_bonus">No Hidden Fees • 3 Days Free Trial</span>
+            </li>
+          </ul>
+
+          <!-- Instant WhatsApp + Facebook Inbox Buttons -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <a href="https://wa.me/8801516120012?text=Hello%20VeloDesk!%20I%20want%20to%20claim%20my%203%20Days%20Free%20Trial%20for%20the%20ALL-IN-ONE%203,000%20BDT%2FMonth%20package." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-gradient-to-r from-gold-bright via-gold to-gold-deep text-void-950 font-extrabold text-sm sm:text-base shadow-gold-luxe hover:brightness-110 transition-all">
+              <span data-i18n="vc_btn_wa">Claim on WhatsApp</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+            </a>
+            <a href="https://www.facebook.com/share/1CNk6QyQMC/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-void-850 border border-cyanx/55 text-white font-extrabold text-sm sm:text-base hover:bg-cyanx/15 hover:border-cyanx transition-all">
+              <svg class="w-5 h-5 text-cyanx" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.145 2 11.259c0 2.913 1.454 5.512 3.726 7.21V22l3.405-1.869c.909.252 1.872.388 2.869.388 5.523 0 10-4.145 10-9.26C22 6.145 17.523 2 12 2z" /></svg>
+              <span data-i18n="vc_btn_fb">Inbox on Facebook</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. 3-STEP PRECISION ONBOARDING TIMELINE
+       ========================================================================= -->
+  <section id="process" class="reveal-section py-20 lg:py-24 bg-void-950 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-cyanx/15 border border-cyanx/45 text-cyanx-bright font-tech font-bold text-xs uppercase tracking-[0.2em] mb-4" data-i18n="proc_tag">
+          PRECISION ONBOARDING
+        </span>
+        <h2 class="font-editorial text-3xl sm:text-4xl font-extrabold text-white tracking-tight" data-i18n="proc_title">
+          From First Message to Full Scale in 3 Steps
+        </h2>
+      </div>
+
+      <div class="relative grid grid-cols-1 md:grid-cols-3 gap-7">
+        <!-- Connecting Line Desktop -->
+        <div class="hidden md:block absolute top-12 left-[16%] right-[16%] z-0 h-[2px] bg-gradient-to-r from-cyanx/50 via-gold/70 to-cyanx/50"></div>
+
+        <!-- Step 01 -->
+        <div class="relative z-10 spotlight-card luxe-glass rounded-3xl p-7 text-center">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-void-950 border-2 border-cyanx text-cyanx-bright font-tech font-extrabold text-2xl flex items-center justify-center shadow-cyan-luxe">
+            01
+          </div>
+          <h3 class="font-editorial text-xl font-extrabold text-white mb-3" data-i18n="p1_t">Brand Audit &amp; Strategy</h3>
+          <p class="text-[#E2E8F0] text-sm sm:text-base leading-relaxed" data-i18n="p1_d">
+            Share your page link and products. We analyze your niche, define your luxury visual direction, and prepare your creative roadmap.
+          </p>
+        </div>
+
+        <!-- Step 02 -->
+        <div class="relative z-10 spotlight-card luxe-glass rounded-3xl p-7 text-center">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-gold-bright to-gold-deep text-void-950 font-tech font-extrabold text-2xl flex items-center justify-center shadow-gold-luxe">
+            02
+          </div>
+          <h3 class="font-editorial text-xl font-extrabold text-white mb-3" data-i18n="p2_t">3-Day Free Trial Launch</h3>
+          <p class="text-[#E2E8F0] text-sm sm:text-base leading-relaxed" data-i18n="p2_d">
+            Watch our creative studio and support specialists in action for 3 full days — designs, reels, and instant inbox replies at zero cost.
+          </p>
+        </div>
+
+        <!-- Step 03 -->
+        <div class="relative z-10 spotlight-card luxe-glass rounded-3xl p-7 text-center">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-void-950 border-2 border-cyanx text-cyanx-bright font-tech font-extrabold text-2xl flex items-center justify-center shadow-cyan-luxe">
+            03
+          </div>
+          <h3 class="font-editorial text-xl font-extrabold text-white mb-3" data-i18n="p3_t">Daily Creative &amp; Sales Scale</h3>
+          <p class="text-[#E2E8F0] text-sm sm:text-base leading-relaxed" data-i18n="p3_d">
+            Enjoy uninterrupted daily ads, reels, call center order confirmations, and nightly sales reports while you focus purely on growing your business.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9. SLEEK INTERACTIVE FAQ ACCORDION (5 PRACTICAL QUESTIONS)
+       ========================================================================= -->
+  <section id="faq" class="reveal-section py-20 lg:py-24 bg-void-900 border-t border-white/10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-gold/15 border border-gold/45 text-gold-bright font-tech font-bold text-xs uppercase tracking-[0.2em] mb-4" data-i18n="faq_tag">
+          CLIENT INTELLIGENCE • FAQ
+        </span>
+        <h2 class="font-editorial text-3xl sm:text-4xl font-extrabold text-white tracking-tight" data-i18n="faq_title">
+          Everything You Need to Know Before Starting
+        </h2>
+      </div>
+
+      <div class="space-y-3.5">
+        <!-- FAQ 1 -->
+        <div class="faq-item luxe-glass rounded-2xl overflow-hidden" data-open="true">
+          <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left text-white font-bold text-sm sm:text-base hover:text-cyanx-bright transition-colors" aria-expanded="true">
+            <span data-i18n="faq_q1">1. How does the 3-Day Free Trial work? Is any advance payment needed?</span>
+            <svg class="faq-chevron w-5 h-5 text-cyanx shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="faq-body px-6 pb-5 text-[#E2E8F0] text-sm sm:text-base leading-relaxed" data-i18n="faq_a1">
+            Zero advance is required. Once you message us, we onboard your page and deliver real creative designs, reels, and inbox management for 3 full days so you can judge our quality firsthand before paying anything.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item luxe-glass rounded-2xl overflow-hidden" data-open="false">
+          <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left text-white font-bold text-sm sm:text-base hover:text-cyanx-bright transition-colors" aria-expanded="false">
+            <span data-i18n="faq_q2">2. Is my Facebook page ownership and security 100% safe?</span>
+            <svg class="faq-chevron w-5 h-5 text-cyanx shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="faq-body hidden px-6 pb-5 text-[#E2E8F0] text-sm sm:text-base leading-relaxed" data-i18n="faq_a2">
+            Absolutely. You keep 100% full Admin control of your page at all times. You only grant us limited Task/Content &amp; Messages access via Meta Business Suite, which you control completely.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item luxe-glass rounded-2xl overflow-hidden" data-open="false">
+          <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left text-white font-bold text-sm sm:text-base hover:text-cyanx-bright transition-colors" aria-expanded="false">
+            <span data-i18n="faq_q3">3. What daily deliverables are included in the 3,000 BDT / month plan?</span>
+            <svg class="faq-chevron w-5 h-5 text-cyanx shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="faq-body hidden px-6 pb-5 text-[#E2E8F0] text-sm sm:text-base leading-relaxed" data-i18n="faq_a3">
+            All 5 core services are included: Daily Product Design &amp; Posts, Daily Reels &amp; Video Editing, Fast Inbox &amp; Comment Reply, Customer Call Center Support for order confirmation, and Daily Order &amp; Sales Reports.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item luxe-glass rounded-2xl overflow-hidden" data-open="false">
+          <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left text-white font-bold text-sm sm:text-base hover:text-cyanx-bright transition-colors" aria-expanded="false">
+            <span data-i18n="faq_q4">4. Can you create posts, ad copy, and reels in both Bangla and English?</span>
+            <svg class="faq-chevron w-5 h-5 text-cyanx shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="faq-body hidden px-6 pb-5 text-[#E2E8F0] text-sm sm:text-base leading-relaxed" data-i18n="faq_a4">
+            Yes! Whether your target buyers prefer crisp Bangla, modern Banglish, or luxury English branding, our copywriters and designers tailor every post, reel caption, and inbox reply to match your exact brand voice.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item luxe-glass rounded-2xl overflow-hidden" data-open="false">
+          <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left text-white font-bold text-sm sm:text-base hover:text-cyanx-bright transition-colors" aria-expanded="false">
+            <span data-i18n="faq_q5">5. How fast can we get started with VeloDesk?</span>
+            <svg class="faq-chevron w-5 h-5 text-cyanx shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="faq-body hidden px-6 pb-5 text-[#E2E8F0] text-sm sm:text-base leading-relaxed" data-i18n="faq_a5">
+            Within minutes! Fill out the trial form below, call us at 01516120012, or message us directly on WhatsApp or Facebook — we can launch your 3-Day Free Trial on the very same day.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       10. CONCIERGE 3-DAY FREE TRIAL SECTION & INTERACTIVE FORM
+       ========================================================================= -->
+  <section id="trial" class="reveal-section relative py-20 lg:py-28 bg-void-950 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+
+        <!-- Left VIP Concierge Contact Cards -->
+        <div class="lg:col-span-5">
+          <span class="inline-block px-4 py-1.5 rounded-full bg-cyanx/15 border border-cyanx/45 text-cyanx-bright font-tech font-bold text-xs uppercase tracking-[0.2em] mb-4" data-i18n="trial_tag">
+            VIP CLIENT CONCIERGE
+          </span>
+          <h2 class="font-editorial text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-4" data-i18n="trial_title">
+            Launch Your 3 Days Free Trial Today
+          </h2>
+          <p class="text-[#E2E8F0] text-base leading-relaxed mb-8" data-i18n="trial_sub">
+            Ready to elevate your page presentation and daily sales? Connect with our team instantly via WhatsApp, Hotline, or Facebook Inbox.
+          </p>
+
+          <div class="space-y-4">
+            <!-- VIP WhatsApp Card -->
+            <a href="https://wa.me/8801516120012?text=Hello%20VeloDesk!%20I%20want%20to%20start%20my%203%20Days%20Free%20Trial." target="_blank" rel="noopener noreferrer" class="spotlight-card luxe-glass flex items-center justify-between p-4 sm:p-5 rounded-2xl border border-emerald-400/35 hover:border-emerald-400 transition-all group">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-400/50 text-emerald-300 flex items-center justify-center shrink-0">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 2c-5.516 0-9.998 4.482-9.998 9.998 0 1.763.46 3.485 1.334 5.002L2 22l5.125-1.344a9.954 9.954 0 004.906 1.295h.004c5.515 0 9.998-4.483 9.998-9.998 0-2.671-1.04-5.182-2.929-7.071A9.936 9.936 0 0012.031 2zm5.822 14.215c-.246.693-1.434 1.326-1.99 1.409-.513.076-1.178.108-1.902-.121-.44-.139-1.006-.325-1.729-.637-3.043-1.314-5.03-4.385-5.182-4.588-.151-.203-1.238-1.648-1.238-3.144 0-1.496.784-2.231 1.062-2.536.278-.304.607-.38.809-.38.202 0 .405.002.582.011.187.009.438-.071.685.524.253.608.861 2.103.937 2.255.076.152.126.329.025.532-.101.203-.152.329-.304.506-.152.177-.319.396-.456.532-.152.152-.31.317-.133.621.177.304.787 1.298 1.69 2.103 1.161 1.035 2.14 1.356 2.444 1.508.304.152.481.127.658-.076.177-.203.759-.886.962-1.19.203-.304.405-.253.683-.152.278.101 1.772.836 2.076.988.304.152.506.228.582.354.076.127.076.734-.17 1.427z" /></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-white text-sm sm:text-base" data-i18n="vip_wa_t">WhatsApp Priority Desk</p>
+                  <p class="font-tech text-xs sm:text-sm font-bold text-emerald-300">01516120012</p>
+                </div>
+              </div>
+              <svg class="w-5 h-5 text-white/60 group-hover:text-emerald-300 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+            </a>
+
+            <!-- VIP Direct Hotline Card -->
+            <a href="tel:+8801516120012" class="spotlight-card luxe-glass flex items-center justify-between p-4 sm:p-5 rounded-2xl border border-gold/35 hover:border-gold transition-all group">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-gold/20 border border-gold/50 text-gold-bright flex items-center justify-center shrink-0">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-white text-sm sm:text-base" data-i18n="vip_call_t">Direct Agency Hotline</p>
+                  <p class="font-tech text-xs sm:text-sm font-bold text-gold-bright">01516120012</p>
+                </div>
+              </div>
+              <svg class="w-5 h-5 text-white/60 group-hover:text-gold-bright group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+            </a>
+
+            <!-- VIP Facebook Page Inbox Card -->
+            <a href="https://www.facebook.com/share/1CNk6QyQMC/" target="_blank" rel="noopener noreferrer" class="spotlight-card luxe-glass flex items-center justify-between p-4 sm:p-5 rounded-2xl border border-cyanx/35 hover:border-cyanx transition-all group">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-cyanx/20 border border-cyanx/50 text-cyanx-bright flex items-center justify-center shrink-0">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.145 2 11.259c0 2.913 1.454 5.512 3.726 7.21V22l3.405-1.869c.909.252 1.872.388 2.869.388 5.523 0 10-4.145 10-9.26C22 6.145 17.523 2 12 2zm1.002 12.463l-2.548-2.718-4.97 2.718 5.468-5.804 2.61 2.718 4.908-2.718-5.468 5.804z" /></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-white text-sm sm:text-base" data-i18n="vip_fb_t">Official Facebook Page Inbox</p>
+                  <p class="text-xs sm:text-sm font-bold text-cyanx-bright" data-i18n="vip_fb_s">Message VeloDesk Directly</p>
+                </div>
+              </div>
+              <svg class="w-5 h-5 text-white/60 group-hover:text-cyanx-bright group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Interactive Concierge Form -->
+        <div class="lg:col-span-7">
+          <div class="luxe-glass rounded-[2rem] p-6 sm:p-9 border border-white/20 shadow-obsidian-deep">
+            <h3 class="font-editorial text-2xl font-extrabold text-white mb-2" data-i18n="form_h">
+              Reserve Your 3-Day Free Trial
+            </h3>
+            <p class="text-sm text-[#E2E8F0] mb-6" data-i18n="form_sub">
+              Complete the brief below — it formats your agency onboarding request and opens WhatsApp (01516120012) immediately.
+            </p>
+
+            <form id="trial-form" class="space-y-4" novalidate>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="f-name" class="block text-xs sm:text-sm font-bold text-white mb-1.5" data-i18n="f_name_lbl">Your Name *</label>
+                  <input id="f-name" type="text" required placeholder="e.g. Rafiqul Islam" data-i18n-placeholder="f_name_ph" class="w-full px-4 py-3.5 rounded-xl bg-void-950 border border-white/25 text-white placeholder-slate-400 focus:outline-none focus:border-cyanx focus:ring-1 focus:ring-cyanx transition-all" />
+                </div>
+                <div>
+                  <label for="f-business" class="block text-xs sm:text-sm font-bold text-white mb-1.5" data-i18n="f_biz_lbl">Business / Page Name *</label>
+                  <input id="f-business" type="text" required placeholder="e.g. Aura Fashion BD" data-i18n-placeholder="f_biz_ph" class="w-full px-4 py-3.5 rounded-xl bg-void-950 border border-white/25 text-white placeholder-slate-400 focus:outline-none focus:border-cyanx focus:ring-1 focus:ring-cyanx transition-all" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="f-pagelink" class="block text-xs sm:text-sm font-bold text-white mb-1.5" data-i18n="f_link_lbl">Facebook Page Link</label>
+                  <input id="f-pagelink" type="text" placeholder="facebook.com/yourpage" data-i18n-placeholder="f_link_ph" class="w-full px-4 py-3.5 rounded-xl bg-void-950 border border-white/25 text-white placeholder-slate-400 focus:outline-none focus:border-cyanx focus:ring-1 focus:ring-cyanx transition-all" />
+                </div>
+                <div>
+                  <label for="f-phone" class="block text-xs sm:text-sm font-bold text-white mb-1.5" data-i18n="f_phone_lbl">Phone Number *</label>
+                  <input id="f-phone" type="tel" required placeholder="01XXXXXXXXX" data-i18n-placeholder="f_phone_ph" class="w-full px-4 py-3.5 rounded-xl bg-void-950 border border-white/25 text-white placeholder-slate-400 focus:outline-none focus:border-cyanx focus:ring-1 focus:ring-cyanx transition-all" />
+                </div>
+              </div>
+
+              <div>
+                <label for="f-goal" class="block text-xs sm:text-sm font-bold text-white mb-1.5" data-i18n="f_goal_lbl">Primary Goal</label>
+                <select id="f-goal" class="w-full px-4 py-3.5 rounded-xl bg-void-950 border border-white/25 text-white focus:outline-none focus:border-cyanx focus:ring-1 focus:ring-cyanx transition-all">
+                  <option value="Full All-In-One Page Management (3,000 BDT/Mo)" data-i18n="f_g1">Full All-In-One Page Management (3,000 BDT/Mo)</option>
+                  <option value="Luxury Ad Creatives & Viral Daily Reels" data-i18n="f_g2">Luxury Ad Creatives &amp; Viral Daily Reels</option>
+                  <option value="24/7 Inbox Reply & Call Center Order Confirmation" data-i18n="f_g3">24/7 Inbox Reply &amp; Call Center Order Confirmation</option>
+                  <option value="Increase Daily Sales & Brand Presentation" data-i18n="f_g4">Increase Daily Sales &amp; Brand Presentation</option>
+                </select>
+              </div>
+
+              <!-- Inline Validation Message -->
+              <div id="form-error" class="hidden p-3.5 rounded-xl bg-red-500/20 border border-red-400/60 text-red-200 text-sm font-semibold"></div>
+
+              <button type="submit" class="w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-gradient-to-r from-gold-bright via-gold to-cyanx text-void-950 font-extrabold text-base shadow-gold-luxe hover:brightness-110 transition-all">
+                <span data-i18n="f_submit">Send Request &amp; Start Free Trial on WhatsApp</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+              </button>
+            </form>
+
+            <!-- Post-Submit Confirmation Card -->
+            <div id="form-confirmation" class="hidden mt-5 p-5 rounded-2xl bg-emerald-500/15 border border-emerald-400/50">
+              <div class="flex items-start gap-3.5">
+                <div class="w-9 h-9 rounded-full bg-emerald-400 text-void-950 flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-editorial font-bold text-white text-base mb-1" data-i18n="conf_t">WhatsApp Onboarding Ready!</h4>
+                  <p class="text-xs sm:text-sm text-[#E2E8F0] mb-3" data-i18n="conf_d">
+                    Your 3-Day Free Trial brief is formatted for WhatsApp (01516120012). You can also message our Facebook Page directly.
+                  </p>
+                  <div class="flex flex-wrap gap-2.5">
+                    <a id="conf-wa-link" href="https://wa.me/8801516120012" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-emerald-400 text-void-950 font-extrabold text-xs hover:bg-emerald-300 transition-colors" data-i18n="conf_wa">
+                      Open WhatsApp Again
+                    </a>
+                    <a href="https://www.facebook.com/share/1CNk6QyQMC/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white/10 border border-cyanx/50 text-cyanx-bright font-bold text-xs hover:bg-cyanx/20 transition-colors" data-i18n="conf_fb">
+                      Inbox on Facebook
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       11. MINIMALIST LUXURY FOOTER
+       ========================================================================= -->
+  <footer class="bg-[#03050B] border-t border-white/15 pt-14 pb-28 sm:pb-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-white/15">
+        <div class="md:col-span-5">
+          <a href="#top" class="inline-flex items-center gap-3 mb-4">
+            <span class="font-editorial text-2xl font-extrabold tracking-tight">
+              <span class="text-cyanx">Velo</span><span class="text-white">Desk</span>
+            </span>
+            <span class="px-2.5 py-0.5 rounded-full bg-gold/15 border border-gold/40 text-gold-bright text-[10px] font-extrabold tracking-widest uppercase">STUDIO</span>
+          </a>
+          <p class="text-sm text-[#E2E8F0] max-w-sm leading-relaxed" data-i18n="foot_desc">
+            FOCUS ON YOUR BUSINESS, WE HANDLE YOUR PAGE. Ultra-luxury creative ad studio &amp; full e-business support partner in Dhaka, Bangladesh.
+          </p>
+        </div>
+
+        <div class="md:col-span-3">
+          <h4 class="font-tech text-xs font-extrabold uppercase tracking-[0.2em] text-gold-bright mb-4" data-i18n="foot_nav_t">Navigation</h4>
+          <ul class="space-y-2.5 text-sm text-[#E2E8F0] font-medium">
+            <li><a href="#studio" class="hover:text-cyanx transition-colors" data-i18n="nav_showcase">Showcase</a></li>
+            <li><a href="#services" class="hover:text-cyanx transition-colors" data-i18n="nav_services">Services</a></li>
+            <li><a href="#transformation" class="hover:text-cyanx transition-colors" data-i18n="nav_transform">Transformation</a></li>
+            <li><a href="#pricing" class="hover:text-cyanx transition-colors" data-i18n="nav_pricing">Pricing</a></li>
+            <li><a href="#faq" class="hover:text-cyanx transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4">
+          <h4 class="font-tech text-xs font-extrabold uppercase tracking-[0.2em] text-gold-bright mb-4" data-i18n="foot_contact_t">VIP Direct Lines</h4>
+          <ul class="space-y-3 text-sm text-[#E2E8F0] font-medium">
+            <li>
+              <a href="https://wa.me/8801516120012" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-300 transition-colors">
+                WhatsApp: <strong class="text-white">01516120012</strong>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+8801516120012" class="hover:text-gold-bright transition-colors">
+                Hotline: <strong class="text-white">01516120012</strong>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/share/1CNk6QyQMC/" target="_blank" rel="noopener noreferrer" class="hover:text-cyanx-bright transition-colors" data-i18n="foot_fb">
+                Facebook Page: VeloDesk Official →
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#E2E8F0]">
+        <p data-i18n="foot_copy">© 2026 VeloDesk • E-Business &amp; Support Partner. All rights reserved.</p>
+        <p data-i18n="foot_loc">Dhaka, Bangladesh • ALL-IN-ONE 3,000 BDT / MONTH</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       FLOATING QUICK-CONNECT DOCK (WHATSAPP, CALL, FACEBOOK)
+       ========================================================================= -->
+  <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2 p-1.5 rounded-full bg-[#070C18]/95 backdrop-blur-xl border border-white/20 shadow-[0_14px_40px_rgba(0,0,0,0.85)]">
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/share/1CNk6QyQMC/" target="_blank" rel="noopener noreferrer" aria-label="Message VeloDesk on Facebook" class="flex items-center justify-center w-11 h-11 rounded-full bg-void-800 border border-cyanx/45 text-cyanx-bright hover:bg-cyanx hover:text-void-950 transition-all">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.145 2 11.259c0 2.913 1.454 5.512 3.726 7.21V22l3.405-1.869c.909.252 1.872.388 2.869.388 5.523 0 10-4.145 10-9.26C22 6.145 17.523 2 12 2zm1.002 12.463l-2.548-2.718-4.97 2.718 5.468-5.804 2.61 2.718 4.908-2.718-5.468 5.804z" /></svg>
+    </a>
+    <!-- Call -->
+    <a href="tel:+8801516120012" aria-label="Call VeloDesk 01516120012" class="flex items-center justify-center w-11 h-11 rounded-full bg-void-800 border border-gold/55 text-gold-bright hover:bg-gold hover:text-void-950 transition-all">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+    </a>
+    <!-- WhatsApp Pill -->
+    <a href="https://wa.me/8801516120012?text=Hello%20VeloDesk!%20I%20want%20to%20start%20my%203%20Days%20Free%20Trial." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp VeloDesk" class="flex items-center gap-2 px-4 h-11 rounded-full bg-emerald-400 text-void-950 font-extrabold text-xs sm:text-sm hover:bg-emerald-300 transition-all shadow-[0_0_20px_rgba(52,211,153,0.45)]">
+      <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 2c-5.516 0-9.998 4.482-9.998 9.998 0 1.763.46 3.485 1.334 5.002L2 22l5.125-1.344a9.954 9.954 0 004.906 1.295h.004c5.515 0 9.998-4.483 9.998-9.998 0-2.671-1.04-5.182-2.929-7.071A9.936 9.936 0 0012.031 2zm5.822 14.215c-.246.693-1.434 1.326-1.99 1.409-.513.076-1.178.108-1.902-.121-.44-.139-1.006-.325-1.729-.637-3.043-1.314-5.03-4.385-5.182-4.588-.151-.203-1.238-1.648-1.238-3.144 0-1.496.784-2.231 1.062-2.536.278-.304.607-.38.809-.38.202 0 .405.002.582.011.187.009.438-.071.685.524.253.608.861 2.103.937 2.255.076.152.126.329.025.532-.101.203-.152.329-.304.506-.152.177-.319.396-.456.532-.152.152-.31.317-.133.621.177.304.787 1.298 1.69 2.103 1.161 1.035 2.14 1.356 2.444 1.508.304.152.481.127.658-.076.177-.203.759-.886.962-1.19.203-.304.405-.253.683-.152.278.101 1.772.836 2.076.988.304.152.506.228.582.354.076.127.076.734-.17 1.427z" /></svg>
+      <span data-i18n="dock_wa">WhatsApp</span>
+    </a>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-20 left-1/2 z-50 px-5 py-3 rounded-2xl bg-void-850 border border-cyanx text-white text-sm font-bold shadow-cyan-luxe transition-all duration-300 toast-hidden flex items-center gap-2.5">
+    <span class="w-2.5 h-2.5 rounded-full bg-cyanx"></span>
+    <span id="toast-text" data-i18n="toast_msg">Opening WhatsApp with your 3-Day Free Trial brief...</span>
+  </div>
+
+  <!-- =========================================================================
+       INTERACTIVE ENGINE: BILINGUAL (EN/বাংলা), STUDIO TABS, BEFORE/AFTER,
+       3D TILT + SPOTLIGHT GLOW, FAQ ACCORDION & WHATSAPP FORM
+       ========================================================================= -->
+  <script>
+    const VELODESK = {
+      whatsappIntl: '8801516120012',
+      phoneDisplay: '01516120012',
+      facebookUrl: 'https://www.facebook.com/share/1CNk6QyQMC/'
+    };
+
+    const I18N = {
+      en: {
+        nav_showcase: 'Showcase',
+        nav_services: 'Services',
+        nav_transform: 'Transformation',
+        nav_pricing: 'Pricing',
+        nav_trial: 'Trial',
+        nav_cta: '3-Day Free Trial',
+
+        hero_badge: 'NEXT-GEN E-BUSINESS & CREATIVE AD STUDIO • DHAKA',
+        hero_h1_line1: 'FOCUS ON YOUR BUSINESS,',
+        hero_h1_line2: 'WE HANDLE YOUR PAGE',
+        hero_sub: 'Transform your Facebook & online store into an unmistakable luxury brand. We deliver scroll-stopping ad visuals, viral daily reels, persuasive copywriting, lightning-fast inbox replies, and phone order confirmation — engineered for maximum daily sales.',
+        hero_cta_primary: 'Start 3-Day Free Trial',
+        hero_cta_fb: 'Message on Facebook',
+        hero_strip_1: 'ALL-IN-ONE • 3,000 BDT / MONTH',
+        hero_strip_2: 'GET 3 DAYS FREE TRIAL — ZERO ADVANCE',
+
+        cmd_title: 'VeloDesk Creative Command Suite',
+        cmd_sub: 'Live Ad Studio & Sales Telemetry',
+        cmd_live: 'ACTIVE',
+        cmd_m1_lbl: 'Ad Quality',
+        cmd_m1_sub: 'Studio Grade',
+        cmd_m2_lbl: 'Inbox Reply',
+        cmd_m2_sub: 'Fast Closing',
+        cmd_m3_lbl: 'Daily Reels',
+        cmd_m3_val: 'READY',
+        cmd_m3_sub: '4K Motion',
+        cmd_chart_t: 'Live Sales Pulse',
+        cmd_chart_s: 'Confirmed Orders & Ad ROAS Trend',
+        cmd_foot_l: 'All-In-One Agency Retainer',
+        cmd_foot_r: '3,000 BDT / MO',
+
+        mq_1: 'PREMIUM AD CREATIVES',
+        mq_2: 'HIGH-CONVERTING COPYWRITING',
+        mq_3: 'DAILY PRODUCT DESIGN',
+        mq_4: 'VIRAL REELS EDITING',
+        mq_5: 'FAST INBOX & COMMENT REPLY',
+        mq_6: 'CALL CENTER SUPPORT',
+        mq_7: 'DAILY SALES REPORTS',
+
+        studio_tag: 'INSIDE OUR CREATIVE STUDIO',
+        studio_title: 'See Why Brands Look Unmistakably Elite With Us',
+        studio_sub: 'Explore the exact creative architecture, motion rhythm, ad copywriting, and sales engine we craft for your business every single day.',
+        tab_1: '01. Luxury Product Ads',
+        tab_2: '02. Viral Reels & Motion',
+        tab_3: '03. Persuasive Ad Copy',
+        tab_4: '04. Inbox & Sales Engine',
+
+        t1_badge: 'SPONSORED AD CREATIVE',
+        t1_kicker: 'LIMITED EDITION DROP',
+        t1_prod: 'Obsidian Chrono Luxe',
+        t1_offer: '30% OFF TODAY',
+        t1_cod: 'Cash On Delivery',
+        t1_stat1: '● CTR +3.8x Higher',
+        t1_stat2: 'Typography & Grid Precision',
+        t1_h3: 'Scroll-Stopping Luxury Product Ads',
+        t1_p: 'Ordinary product photos get scrolled past in 0.5 seconds. Our art directors apply studio lighting treatments, sharp typographic hierarchy, and luxury color grading so your product immediately commands premium price and buyer trust.',
+        t1_b1: 'Custom brand-matched color & typography system',
+        t1_b2: 'Designed specifically for Facebook & Instagram ad conversion',
+        t1_b3: 'Fresh daily creatives published consistently on your page',
+
+        t2_s1: 'Pattern-Interrupt Visual Hook',
+        t2_s2: 'Dynamic Cuts + Kinetic Captions',
+        t2_s3: 'Urgent "Inbox Now" Offer CTA',
+        t2_stat1: 'Avg Watch Time: 92%',
+        t2_stat2: 'Trending Audio Sync',
+        t2_h3: 'High-Retention Viral Reels & Motion Ads',
+        t2_p: 'Short-form video drives the highest organic reach today. Send us simple raw phone clips of your products—our editors turn them into cinematic, fast-paced reels with bold Bangla/English captions, sound design, and magnetic pacing.',
+        t2_b1: '3-second scroll-stopping hook structure built into every video',
+        t2_b2: 'Crisp motion graphics, price tags & smooth transitions',
+        t2_b3: 'Optimized for both organic Reels virality and paid Meta ads',
+
+        t3_badge: 'CONVERSION COPYWRITING BLUEPRINT',
+        t3_c1_lbl: '1. SCROLL-STOPPING HOOK',
+        t3_c1_txt: '"Still losing customers to pages with weaker products? Make your first impression unforgettable."',
+        t3_c2_lbl: '2. DESIRE & TRUST TRIGGER',
+        t3_c2_txt: 'Crafted with precision finishing, verified quality guarantee, and doorstep cash-on-delivery across Bangladesh.',
+        t3_c3_lbl: '3. FRICTIONLESS CTA',
+        t3_c3_txt: '"Tap Send Message now with your phone number & address — our team confirms in under 2 minutes."',
+        t3_h3: 'Words Engineered to Trigger Instant Orders',
+        t3_p: 'Great design grabs attention, but elite copywriting closes the sale. We write natural, persuasive Bangla and English captions that answer buyer objections before they even ask.',
+        t3_b1: 'Psychology-backed hooks, bullet benefits & urgency triggers',
+        t3_b2: 'Polished, error-free Bangla & English brand voice',
+        t3_b3: 'Strategic hashtags & ad-compliant formatting',
+
+        t4_badge: 'LIVE INBOX TO ORDER PIPELINE',
+        t4_m1: 'Customer: "Price koto? Dhaka te delivery koto din lagbe?"',
+        t4_m2: 'VeloDesk Agent (32s): "Assalamu Alaikum! Offer price 1,450৳, Dhaka delivery 24 hrs. Order confirm korte apnar naam, phone & address din."',
+        t4_k1: 'Orders',
+        t4_k2: 'Call Verified',
+        t4_k3: 'Nightly Sheet',
+        t4_h3: 'Instant Inbox Closing & Nightly Sales Reports',
+        t4_p: 'Every delayed reply hands your customer to a competitor. Our trained support team responds within seconds, confirms orders by phone call to eliminate fake orders, and sends you a clean courier-ready sales sheet every night.',
+        t4_b1: 'Fast Messenger inbox & post comment replies',
+        t4_b2: 'Polite phone call center verification for every order',
+        t4_b3: 'Transparent daily order & revenue reporting',
+
+        eff_tag: 'THE VELODESK EFFECT',
+        eff_title: 'See the Instant Page Transformation',
+        eff_sub: 'Toggle below to compare an unmanaged struggling page against a VeloDesk-powered luxury brand presence.',
+        eff_btn_before: 'Without VeloDesk',
+        eff_btn_after: 'With VeloDesk ✦',
+        eff_cta: 'Experience Free Trial →',
+        eff_p1_lbl: 'Visual Identity',
+        eff_p2_lbl: 'Content Consistency',
+        eff_p3_lbl: 'Customer Response',
+        eff_p4_lbl: 'Sales Tracking',
+        eff_before_badge: 'STRUGGLING UNMANAGED PAGE',
+        eff_before_h: 'Without VeloDesk: Inconsistent, Slow & Losing Buyers',
+        eff_before_1: 'Unpolished random photos that look amateur and fail to stand out in crowded feeds.',
+        eff_before_2: 'Irregular posting once a week — algorithm reach drops and followers forget your page.',
+        eff_before_3: 'Hours-late inbox replies and zero confirmation calls — buyers order from competitors.',
+        eff_before_4: 'Messy notebooks, missed orders, high return rates, and unclear daily profit.',
+        eff_after_badge: 'LUXURY BRAND PRESENCE',
+        eff_after_h: 'With VeloDesk: Organized, Prestigious & High-Converting',
+        eff_after_1: 'Cohesive, studio-grade luxury ad designs & reels that make buyers trust your brand instantly.',
+        eff_after_2: 'Daily scheduled product posts & viral reels published like clockwork — zero silent days.',
+        eff_after_3: 'Instant inbox & comment replies under 60 seconds plus polite phone call order confirmation.',
+        eff_after_4: 'Crystal-clear nightly order & revenue reports ready for immediate courier dispatch.',
+
+        srv_tag: '5 CORE AGENCY SERVICES',
+        srv_title: 'Your Entire E-Business Team, Unified in One Suite',
+        srv_sub: 'Every pillar required to design, promote, respond, confirm, and report — executed daily with agency-level discipline.',
+        s1_title: 'Daily Product Design & Posts',
+        s1_desc: 'Luxury product banners, sharp typography, and persuasive Bangla/English ad captions crafted and published every day so your page radiates authority and drives nonstop inquiries.',
+        s2_title: 'Daily Reels & Video Editing',
+        s2_desc: 'High-retention short video ads and viral reels edited with kinetic captions, crisp cuts, and trending audio to multiply organic reach.',
+        s3_title: 'Fast Inbox & Comment Reply',
+        s3_desc: 'Ultra-fast, courteous, sales-focused Messenger and comment responses that turn curious visitors into confirmed buyers before they leave.',
+        s4_title: 'Customer Call Center Support',
+        s4_desc: 'Dedicated phone order confirmation and polite address verification calls that cut return rates, prevent fake orders, and elevate brand trust.',
+        s5_title: 'Daily Order & Sales Report',
+        s5_desc: 'Clean, organized end-of-day sales and courier-ready order sheets delivered every night — showing exact counts, customer info, and total revenue.',
+
+        price_tag: 'SIGNATURE VIP MEMBERSHIP',
+        price_title: 'One Exclusive All-In-One Retainer',
+        price_sub: 'Full creative studio + dedicated sales & call center operations — at a single transparent monthly rate.',
+        vc_tier: 'VELODESK BLACK-CARD • ALL-IN-ONE',
+        vc_no_hidden: 'NO HIDDEN FEES',
+        vc_price: '3,000 BDT',
+        vc_period: '/ MONTH',
+        vc_offer: 'GET 3 DAYS FREE TRIAL — INBOX NOW',
+        vc_bonus: 'No Hidden Fees • 3 Days Free Trial',
+        vc_btn_wa: 'Claim on WhatsApp',
+        vc_btn_fb: 'Inbox on Facebook',
+
+        proc_tag: 'PRECISION ONBOARDING',
+        proc_title: 'From First Message to Full Scale in 3 Steps',
+        p1_t: 'Brand Audit & Strategy',
+        p1_d: 'Share your page link and products. We analyze your niche, define your luxury visual direction, and prepare your creative roadmap.',
+        p2_t: '3-Day Free Trial Launch',
+        p2_d: 'Watch our creative studio and support specialists in action for 3 full days — designs, reels, and instant inbox replies at zero cost.',
+        p3_t: 'Daily Creative & Sales Scale',
+        p3_d: 'Enjoy uninterrupted daily ads, reels, call center order confirmations, and nightly sales reports while you focus purely on growing your business.',
+
+        faq_tag: 'CLIENT INTELLIGENCE • FAQ',
+        faq_title: 'Everything You Need to Know Before Starting',
+        faq_q1: '1. How does the 3-Day Free Trial work? Is any advance payment needed?',
+        faq_a1: 'Zero advance is required. Once you message us, we onboard your page and deliver real creative designs, reels, and inbox management for 3 full days so you can judge our quality firsthand before paying anything.',
+        faq_q2: '2. Is my Facebook page ownership and security 100% safe?',
+        faq_a2: 'Absolutely. You keep 100% full Admin control of your page at all times. You only grant us limited Task/Content & Messages access via Meta Business Suite, which you control completely.',
+        faq_q3: '3. What daily deliverables are included in the 3,000 BDT / month plan?',
+        faq_a3: 'All 5 core services are included: Daily Product Design & Posts, Daily Reels & Video Editing, Fast Inbox & Comment Reply, Customer Call Center Support for order confirmation, and Daily Order & Sales Reports.',
+        faq_q4: '4. Can you create posts, ad copy, and reels in both Bangla and English?',
+        faq_a4: 'Yes! Whether your target buyers prefer crisp Bangla, modern Banglish, or luxury English branding, our copywriters and designers tailor every post, reel caption, and inbox reply to match your exact brand voice.',
+        faq_q5: '5. How fast can we get started with VeloDesk?',
+        faq_a5: 'Within minutes! Fill out the trial form below, call us at 01516120012, or message us directly on WhatsApp or Facebook — we can launch your 3-Day Free Trial on the very same day.',
+
+        trial_tag: 'VIP CLIENT CONCIERGE',
+        trial_title: 'Launch Your 3 Days Free Trial Today',
+        trial_sub: 'Ready to elevate your page presentation and daily sales? Connect with our team instantly via WhatsApp, Hotline, or Facebook Inbox.',
+        vip_wa_t: 'WhatsApp Priority Desk',
+        vip_call_t: 'Direct Agency Hotline',
+        vip_fb_t: 'Official Facebook Page Inbox',
+        vip_fb_s: 'Message VeloDesk Directly',
+
+        form_h: 'Reserve Your 3-Day Free Trial',
+        form_sub: 'Complete the brief below — it formats your agency onboarding request and opens WhatsApp (01516120012) immediately.',
+        f_name_lbl: 'Your Name *',
+        f_name_ph: 'e.g. Rafiqul Islam',
+        f_biz_lbl: 'Business / Page Name *',
+        f_biz_ph: 'e.g. Aura Fashion BD',
+        f_link_lbl: 'Facebook Page Link',
+        f_link_ph: 'facebook.com/yourpage',
+        f_phone_lbl: 'Phone Number *',
+        f_phone_ph: '01XXXXXXXXX',
+        f_goal_lbl: 'Primary Goal',
+        f_g1: 'Full All-In-One Page Management (3,000 BDT/Mo)',
+        f_g2: 'Luxury Ad Creatives & Viral Daily Reels',
+        f_g3: '24/7 Inbox Reply & Call Center Order Confirmation',
+        f_g4: 'Increase Daily Sales & Brand Presentation',
+        f_submit: 'Send Request & Start Free Trial on WhatsApp',
+        f_err: 'Please fill in your Name, Business / Page Name, and Phone Number.',
+
+        conf_t: 'WhatsApp Onboarding Ready!',
+        conf_d: 'Your 3-Day Free Trial brief is formatted for WhatsApp (01516120012). You can also message our Facebook Page directly.',
+        conf_wa: 'Open WhatsApp Again',
+        conf_fb: 'Inbox on Facebook',
+
+        foot_desc: 'FOCUS ON YOUR BUSINESS, WE HANDLE YOUR PAGE. Ultra-luxury creative ad studio & full e-business support partner in Dhaka, Bangladesh.',
+        foot_nav_t: 'Navigation',
+        foot_contact_t: 'VIP Direct Lines',
+        foot_fb: 'Facebook Page: VeloDesk Official →',
+        foot_copy: '© 2026 VeloDesk • E-Business & Support Partner. All rights reserved.',
+        foot_loc: 'Dhaka, Bangladesh • ALL-IN-ONE 3,000 BDT / MONTH',
+        dock_wa: 'WhatsApp',
+        toast_msg: 'Opening WhatsApp with your 3-Day Free Trial brief...'
+      },
+      bn: {
+        nav_showcase: 'শোকেস',
+        nav_services: 'সার্ভিসসমূহ',
+        nav_transform: 'পরিবর্তন',
+        nav_pricing: 'প্যাকেজ',
+        nav_trial: 'ফ্রি ট্রায়াল',
+        nav_cta: '৩ দিনের ফ্রি ট্রায়াল',
+
+        hero_badge: 'নেক্সট-জেন ই-বিজনেস ও ক্রিয়েটিভ অ্যাড স্টুডিও • ঢাকা',
+        hero_h1_line1: 'আপনি ব্যবসায় মনোযোগ দিন,',
+        hero_h1_line2: 'আপনার পেজ সামলাবো আমরা',
+        hero_sub: 'আপনার ফেসবুক পেজ ও অনলাইন স্টোরকে গড়ে তুলুন একটি প্রিমিয়াম লাক্সারি ব্র্যান্ড হিসেবে। নজরকাড়া অ্যাড ডিজাইন, ভাইরাল ডেইলি রিলস, বিক্রয়মুখী কপিরাইটিং, দ্রুত ইনবক্স রিপ্লাই এবং কল সেন্টার অর্ডার কনফার্মেশন — সবকিছু এখন এক ছাদের নিচে।',
+        hero_cta_primary: '৩ দিনের ফ্রি ট্রায়াল শুরু করুন',
+        hero_cta_fb: 'ফেসবুকে মেসেজ দিন',
+        hero_strip_1: 'অল-ইন-ওয়ান • ৩,০০০ টাকা / মাস',
+        hero_strip_2: '৩ দিনের ফ্রি ট্রায়াল — কোনো অগ্রিম নেই',
+
+        cmd_title: 'VeloDesk ক্রিয়েটিভ কমান্ড স্যুট',
+        cmd_sub: 'লাইভ অ্যাড স্টুডিও ও সেলস ড্যাশবোর্ড',
+        cmd_live: 'সক্রিয়',
+        cmd_m1_lbl: 'অ্যাড কোয়ালিটি',
+        cmd_m1_sub: 'স্টুডিও গ্রেড',
+        cmd_m2_lbl: 'ইনবক্স রিপ্লাই',
+        cmd_m2_sub: 'দ্রুত সেলস',
+        cmd_m3_lbl: 'ডেইলি রিলস',
+        cmd_m3_val: 'প্রস্তুত',
+        cmd_m3_sub: '৪কে মোশন',
+        cmd_chart_t: 'লাইভ সেলস পালস',
+        cmd_chart_s: 'কনফার্ম অর্ডার ও অ্যাড গ্রোথ ট্রেন্ড',
+        cmd_foot_l: 'অল-ইন-ওয়ান এজেন্সি প্যাকেজ',
+        cmd_foot_r: '৩,০০০ টাকা / মাস',
+
+        mq_1: 'প্রিমিয়াম অ্যাড ক্রিয়েটিভ',
+        mq_2: 'বিক্রয়মুখী কপিরাইটিং',
+        mq_3: 'ডেইলি প্রোডাক্ট ডিজাইন',
+        mq_4: 'ভাইরাল রিলস এডিটিং',
+        mq_5: 'দ্রুত ইনবক্স ও কমেন্ট রিপ্লাই',
+        mq_6: 'কল সেন্টার সাপোর্ট',
+        mq_7: 'ডেইলি সেলস রিপোর্ট',
+
+        studio_tag: 'আমাদের ক্রিয়েটিভ স্টুডিও',
+        studio_title: 'দেখে নিন আমাদের সাথে আপনার ব্র্যান্ড কতটা প্রিমিয়াম লাগবে',
+        studio_sub: 'আমাদের ডিজাইন, ভিডিও রিলস, অ্যাড কপিরাইটিং এবং ইনবক্স সেলস ইঞ্জিন কীভাবে প্রতিদিন আপনার পেজকে সবার চেয়ে আলাদা করে তোলে তা নিচে ক্লিক করে দেখুন।',
+        tab_1: '০১. লাক্সারি প্রোডাক্ট অ্যাড',
+        tab_2: '০২. ভাইরাল রিলস ও মোশন',
+        tab_3: '০৩. বিক্রয়মুখী অ্যাড কপি',
+        tab_4: '০৪. ইনবক্স ও সেলস ইঞ্জিন',
+
+        t1_badge: 'স্পন্সরড অ্যাড ক্রিয়েটিভ',
+        t1_kicker: 'লিমিটেড এডিশন কালেকশন',
+        t1_prod: 'অবসিডিয়ান ক্রোনো লাক্স',
+        t1_offer: 'আজ ৩০% ছাড়',
+        t1_cod: 'ক্যাশ অন ডেলিভারি',
+        t1_stat1: '● ক্লিক রেট ৩.৮x বেশি',
+        t1_stat2: 'নিখুঁত টাইপোগ্রাফি ও লেআউট',
+        t1_h3: 'নজরকাড়া লাক্সারি প্রোডাক্ট অ্যাড ডিজাইন',
+        t1_p: 'সাধারণ প্রোডাক্টের ছবি মানুষ ০.৫ সেকেন্ডে স্ক্রল করে চলে যায়। আমাদের ডিজাইনাররা স্টুডিও লাইটিং, নিখুঁত টাইপোগ্রাফি এবং প্রিমিয়াম কালার গ্রেডিং ব্যবহার করে আপনার পণ্যকে আকর্ষণীয় ও বিশ্বস্ত করে তোলে।',
+        t1_b1: 'আপনার ব্র্যান্ডের সাথে মানানসই প্রিমিয়াম কালার ও ফন্ট সিস্টেম',
+        t1_b2: 'ফেসবুক ও ইনস্টাগ্রাম অ্যাড কনভার্সনের জন্য বিশেষভাবে তৈরি',
+        t1_b3: 'প্রতিদিন নিয়মিত নতুন ও মানসম্মত পোস্ট পাবলিশ',
+
+        t2_s1: 'প্রথম ৩ সেকেন্ডে চমকপ্রদ হুক',
+        t2_s2: 'স্মার্ট কাট + আকর্ষণীয় ক্যাপশন',
+        t2_s3: 'সরাসরি ইনবক্সে অর্ডারের আহ্বান',
+        t2_stat1: 'গড় ওয়াচ টাইম: ৯২%',
+        t2_stat2: 'ট্রেন্ডিং অডিও সিঙ্ক',
+        t2_h3: 'হাই-রিটেনশন ভাইরাল রিলস ও মোশন অ্যাড',
+        t2_p: 'বর্তমানে শর্ট ভিডিও সবচেয়ে বেশি রিচ আনে। আপনি শুধু মোবাইলে তোলা সাধারণ ক্লিপ পাঠাবেন—আমাদের এডিটররা সেটাকে আকর্ষণীয় বাংলা/ইংরেজি ক্যাপশন ও সাউন্ড ডিজাইনসহ দারুণ রিলসে রূপান্তর করবে।',
+        t2_b1: 'প্রতিটি ভিডিওতে দর্শক ধরে রাখার ৩-সেকেন্ড হুক স্ট্র্যাটেজি',
+        t2_b2: 'ঝকঝকে মোশন গ্রাফিক্স, প্রাইস ট্যাগ ও স্মুথ ট্রানজিশন',
+        t2_b3: 'অর্গানিক ভাইরাল রিচ ও পেইড মেটা অ্যাডের জন্য পারফেক্ট',
+
+        t3_badge: 'কনভার্সন কপিরাইটিং ব্লুপ্রিন্ট',
+        t3_c1_lbl: '১. নজরকাড়া হুক লাইন',
+        t3_c1_txt: '"ভালো পণ্য থাকা সত্ত্বেও শুধু দুর্বল প্রেজেন্টেশনের কারণে কি কাস্টমার হারাচ্ছেন? প্রথম দেখাতেই আস্থা জিতুন।"',
+        t3_c2_lbl: '২. আগ্রহ ও আস্থা তৈরি',
+        t3_c2_txt: 'নিখুঁত ফিনিশিং, ১০০% কোয়ালিটি গ্যারান্টি এবং সারাদেশে হোম ডেলিভারিতে পণ্য হাতে পেয়ে মূল্য পরিশোধের সুবিধা।',
+        t3_c3_lbl: '৩. সহজ অর্ডার কল-টু-অ্যাকশন',
+        t3_c3_txt: '"এখনই Send Message-এ আপনার ফোন নম্বর ও ঠিকানা পাঠান — ২ মিনিটের মধ্যে আমাদের টিম অর্ডার কনফার্ম করবে।"',
+        t3_h3: 'তাৎক্ষণিক অর্ডার আনতে সক্ষম বিক্রয়মুখী কপিরাইটিং',
+        t3_p: 'সুন্দর ডিজাইন চোখ আটকায়, আর দুর্দান্ত লেখা অর্ডার কনফার্ম করে। আমরা ক্রেতার মন বুঝে সহজ, সাবলীল ও বিক্রয়মুখী বাংলা এবং ইংরেজি ক্যাপশন লিখি।',
+        t3_b1: 'ক্রেতার মনস্তত্ত্ব অনুযায়ী হুক, সুবিধার তালিকা ও আর্জেন্সি',
+        t3_b2: 'শুদ্ধ ও প্রিমিয়াম বাংলা এবং ইংরেজি ব্র্যান্ড ভয়েস',
+        t3_b3: 'সঠিক হ্যাশট্যাগ ও অ্যাড-পলিসি বান্ধব ফরম্যাটিং',
+
+        t4_badge: 'লাইভ ইনবক্স থেকে অর্ডার পাইপলাইন',
+        t4_m1: 'কাস্টমার: "দাম কত? ঢাকায় ডেলিভারি কত দিন লাগবে?"',
+        t4_m2: 'VeloDesk এজেন্ট (৩২ সেকেন্ড): "আসসালামু আলাইকুম! অফার প্রাইস ১,৪৫০৳, ঢাকায় ২৪ ঘণ্টায় ডেলিভারি। অর্ডার কনফার্ম করতে আপনার নাম, ফোন ও ঠিকানা দিন।"',
+        t4_k1: 'অর্ডার',
+        t4_k2: 'ফোন ভেরিফায়েড',
+        t4_k3: 'রাতের রিপোর্ট',
+        t4_h3: 'তাৎক্ষণিক ইনবক্স ক্লোজিং ও রাতের সেলস রিপোর্ট',
+        t4_p: 'রিপ্লাই দিতে দেরি হলেই কাস্টমার অন্য পেজে চলে যায়। আমাদের টিম কয়েক সেকেন্ডেই উত্তর দেয়, ফোনে কল করে অর্ডার কনফার্ম করে এবং প্রতি রাতে কুরিয়ার-রেডি সেলস শিট পাঠিয়ে দেয়।',
+        t4_b1: 'দ্রুত মেসেঞ্জার ইনবক্স ও পোস্টের কমেন্ট রিপ্লাই',
+        t4_b2: 'ফেক অর্ডার কমাতে প্রতিটি অর্ডারে আন্তরিক ফোন ভেরিফিকেশন',
+        t4_b3: 'প্রতিদিনের স্বচ্ছ অর্ডার ও আয়ের রিপোর্ট শিট',
+
+        eff_tag: 'দ্য ভেলোডেস্ক ইফেক্ট',
+        eff_title: 'দেখুন আপনার পেজের তাৎক্ষণিক পরিবর্তন',
+        eff_sub: 'নিচের বাটনে ক্লিক করে একটি সাধারণ পেজ বনাম VeloDesk-এর লাক্সারি পেজের পার্থক্য দেখুন।',
+        eff_btn_before: 'VeloDesk ছাড়া',
+        eff_btn_after: 'VeloDesk-এর সাথে ✦',
+        eff_cta: 'ফ্রি ট্রায়াল নিন →',
+        eff_p1_lbl: 'ভিজ্যুয়াল আইডেন্টিটি',
+        eff_p2_lbl: 'নিয়মিত কনটেন্ট',
+        eff_p3_lbl: 'কাস্টমার রেসপন্স',
+        eff_p4_lbl: 'সেলস ট্র্যাকিং',
+        eff_before_badge: 'অগোছালো সাধারণ পেজ',
+        eff_before_h: 'VeloDesk ছাড়া: অনিয়মিত, ধীরগতি ও কাস্টমার হারানো',
+        eff_before_1: 'অগোছালো সাধারণ ছবি যা নিউজফিডে মানুষের নজর কাড়তে ব্যর্থ হয়।',
+        eff_before_2: 'সপ্তাহে ১ দিন পোস্ট — ফলে ফেসবুক রিচ কমে যায় এবং কাস্টমার পেজ ভুলে যায়।',
+        eff_before_3: 'ঘণ্টার পর ঘণ্টা দেরিতে রিপ্লাই ও কনফার্মেশন কল না থাকায় ক্রেতা হাতছাড়া হয়।',
+        eff_before_4: 'এলোমেলো হিসাব, ফেক অর্ডারের ঝামেলা এবং প্রতিদিনের সঠিক লাভের অভাব।',
+        eff_after_badge: 'লাক্সারি ব্র্যান্ড প্রেজেন্স',
+        eff_after_h: 'VeloDesk-এর সাথে: গোছানো, প্রিমিয়াম ও উচ্চ বিক্রয়মুখী',
+        eff_after_1: 'স্টুডিও-গ্রেড লাক্সারি অ্যাড ডিজাইন ও রিলস যা প্রথম দেখাতেই ক্রেতার আস্থা জিতে নেয়।',
+        eff_after_2: 'প্রতিদিন সময়মতো প্রোডাক্ট পোস্ট ও ভাইরাল রিলস — পেজ সবসময় প্রাণবন্ত থাকে।',
+        eff_after_3: '৬০ সেকেন্ডের মধ্যে ইনবক্স ও কমেন্ট রিপ্লাই এবং ফোনে অর্ডার কনফার্মেশন।',
+        eff_after_4: 'প্রতি রাতে পরিষ্কার অর্ডার ও সেলস রিপোর্ট — সরাসরি কুরিয়ারে পাঠানোর জন্য প্রস্তুত।',
+
+        srv_tag: '৫টি মূল এজেন্সি সার্ভিস',
+        srv_title: 'আপনার সম্পূর্ণ ই-বিজনেস টিম এখন এক প্যাকেজে',
+        srv_sub: 'ডিজাইন, ভিডিও, ইনবক্স রিপ্লাই, কল সেন্টার এবং সেলস রিপোর্ট — প্রতিদিন নিখুঁতভাবে সম্পন্ন করে আমাদের টিম।',
+        s1_title: 'ডেইলি প্রোডাক্ট ডিজাইন ও পোস্ট',
+        s1_desc: 'প্রতিদিন প্রিমিয়াম প্রোডাক্ট ব্যানার, আধুনিক টাইপোগ্রাফি এবং বিক্রয়মুখী বাংলা/ইংরেজি ক্যাপশন তৈরি ও পোস্ট করা হয়।',
+        s2_title: 'ডেইলি রিলস ও ভিডিও এডিটিং',
+        s2_desc: 'অর্গানিক রিচ কয়েক গুণ বাড়াতে প্রতিদিন আকর্ষণীয় শর্ট ভিডিও অ্যাড ও ভাইরাল রিলস এডিটিং।',
+        s3_title: 'দ্রুত ইনবক্স ও কমেন্ট রিপ্লাই',
+        s3_desc: 'মেসেঞ্জার ও পোস্টের কমেন্টে কয়েক সেকেন্ডের মধ্যে মার্জিত ও সেলস-ফোকাসড উত্তর দিয়ে অর্ডার কনফার্ম করা হয়।',
+        s4_title: 'কাস্টমার কল সেন্টার সাপোর্ট',
+        s4_desc: 'ডেডিকেটেড ফোনে অর্ডার কনফার্মেশন ও ঠিকানা যাচাই, যা রিটার্ন রেট ও ফেক অর্ডার কমিয়ে ব্র্যান্ডের মান বাড়ায়।',
+        s5_title: 'ডেইলি অর্ডার ও সেলস রিপোর্ট',
+        s5_desc: 'প্রতিদিন রাতে কাস্টমারের নাম-ঠিকানা, পণ্যের সংখ্যা ও মোট বিক্রির পরিষ্কার কুরিয়ার-রেডি রিপোর্ট শিট।',
+
+        price_tag: 'সিগনেচার ভিআইপি মেম্বারশিপ',
+        price_title: 'একটি অল-ইন-ওয়ান মাসিক প্যাকেজ',
+        price_sub: 'সম্পূর্ণ ক্রিয়েটিভ স্টুডিও + ডেডিকেটেড সেলস ও কল সেন্টার টিম — কোনো হিডেন চার্জ ছাড়াই।',
+        vc_tier: 'VELODESK ব্ল্যাক-কার্ড • অল-ইন-ওয়ান',
+        vc_no_hidden: 'কোনো হিডেন চার্জ নেই',
+        vc_price: '৩,০০০ টাকা',
+        vc_period: '/ মাস',
+        vc_offer: '৩ দিনের ফ্রি ট্রায়াল নিন — এখনই ইনবক্স করুন',
+        vc_bonus: 'কোনো হিডেন চার্জ নেই • ৩ দিনের ফ্রি ট্রায়াল',
+        vc_btn_wa: 'হোয়াটসঅ্যাপে ট্রায়াল নিন',
+        vc_btn_fb: 'ফেসবুকে ইনবক্স করুন',
+
+        proc_tag: 'সহজ ৩ ধাপে শুরু',
+        proc_title: 'প্রথম মেসেজ থেকে পূর্ণাঙ্গ গ্রোথ মাত্র ৩ ধাপে',
+        p1_t: 'ব্র্যান্ড অডিট ও স্ট্র্যাটেজি',
+        p1_d: 'আপনার পেজ লিংক ও পণ্য শেয়ার করুন। আমরা আপনার ব্র্যান্ডের জন্য লাক্সারি ভিজ্যুয়াল ও কনটেন্ট প্ল্যান তৈরি করব।',
+        p2_t: '৩ দিনের ফ্রি ট্রায়াল চালু',
+        p2_d: 'এক টাকাও খরচ না করে টানা ৩ দিন আমাদের ডিজাইন, রিলস ও ইনবক্স সাপোর্টের মান নিজে দেখে নিন।',
+        p3_t: 'প্রতিদিনের ক্রিয়েটিভ ও সেলস গ্রোথ',
+        p3_d: 'প্রতিদিন নিয়মিত পোস্ট, রিলস, কল কনফার্মেশন ও রাতের সেলস রিপোর্ট বুঝে নিয়ে নিশ্চিন্তে ব্যবসা বড় করুন।',
+
+        faq_tag: 'সাধারণ জিজ্ঞাসা • FAQ',
+        faq_title: 'শুরু করার আগে আপনার সব প্রশ্নের উত্তর',
+        faq_q1: '১. ৩ দিনের ফ্রি ট্রায়াল কীভাবে কাজ করে? কোনো অগ্রিম টাকা লাগবে কি?',
+        faq_a1: 'কোনো অগ্রিম টাকা লাগবে না। আপনি মেসেজ দেওয়ার পর আমরা টানা ৩ দিন আপনার পেজে আসল ডিজাইন, রিলস এবং ইনবক্স সাপোর্ট দিয়ে কাজ করে দেখাব। সন্তুষ্ট হলে তারপর মাসিক প্যাকেজ শুরু করবেন।',
+        faq_q2: '২. আপনাদের কাছে আমার ফেসবুক পেজের নিরাপত্তা কি ১০০% নিশ্চিত?',
+        faq_a2: '১০০% নিরাপদ। পেজের পূর্ণাঙ্গ অ্যাডমিন মালিকানা সবসময় আপনার কাছেই থাকবে। আপনি শুধু কনটেন্ট পোস্ট ও মেসেজ রিপ্লাইয়ের জন্য সীমিত Task/Editor অ্যাক্সেস দেবেন।',
+        faq_q3: '৩. ৩,০০০ টাকা/মাস প্যাকেজে প্রতিদিন কী কী সার্ভিস পাব?',
+        faq_a3: 'এতে আমাদের ৫টি মূল সার্ভিসই থাকছে: ডেইলি প্রোডাক্ট ডিজাইন ও পোস্ট, ডেইলি রিলস ও ভিডিও এডিটিং, দ্রুত ইনবক্স ও কমেন্ট রিপ্লাই, কাস্টমার কল সেন্টার সাপোর্ট এবং ডেইলি অর্ডার ও সেলস রিপোর্ট।',
+        faq_q4: '৪. আপনারা কি বাংলা এবং ইংরেজি দুই ভাষাতেই পোস্ট ও রিলস তৈরি করেন?',
+        faq_a4: 'হ্যাঁ! আপনার ক্রেতাদের পছন্দ অনুযায়ী শুদ্ধ বাংলা, স্মার্ট বাংলিশ অথবা প্রিমিয়াম ইংরেজি — যেকোনো ভাষায় আমরা অ্যাড ডিজাইন, কপিরাইটিং এবং রিলস তৈরি করে থাকি।',
+        faq_q5: '৫. আমি কত দ্রুত VeloDesk-এর সাথে কাজ শুরু করতে পারব?',
+        faq_a5: 'মাত্র কয়েক মিনিটেই! নিচের ফর্মটি পূরণ করুন, 01516120012 নম্বরে কল করুন অথবা সরাসরি হোয়াটসঅ্যাপ ও ফেসবুকে মেসেজ দিন — আজ থেকেই আপনার ফ্রি ট্রায়াল শুরু করা যাবে।',
+
+        trial_tag: 'ভিআইপি ক্লায়েন্ট কনসিয়ার্জ',
+        trial_title: 'আজই শুরু করুন আপনার ৩ দিনের ফ্রি ট্রায়াল',
+        trial_sub: 'আপনার পেজের প্রেজেন্টেশন ও প্রতিদিনের সেলস অন্য লেভেলে নিয়ে যেতে এখনই হোয়াটসঅ্যাপ, কল বা ফেসবুকে যোগাযোগ করুন।',
+        vip_wa_t: 'হোয়াটসঅ্যাপ প্রায়োরিটি ডেস্ক',
+        vip_call_t: 'সরাসরি এজেন্সি হটলাইন',
+        vip_fb_t: 'অফিশিয়াল ফেসবুক পেজ ইনবক্স',
+        vip_fb_s: 'সরাসরি VeloDesk-এ মেসেজ দিন',
+
+        form_h: '৩ দিনের ফ্রি ট্রায়াল বুক করুন',
+        form_sub: 'নিচের তথ্যগুলো পূরণ করলেই আপনার রিকোয়েস্ট সুন্দরভাবে সাজিয়ে সরাসরি হোয়াটসঅ্যাপ (01516120012) ওপেন হয়ে যাবে।',
+        f_name_lbl: 'আপনার নাম *',
+        f_name_ph: 'যেমন: রফিকুল ইসলাম',
+        f_biz_lbl: 'ব্যবসা / পেজের নাম *',
+        f_biz_ph: 'যেমন: অরা ফ্যাশন বিডি',
+        f_link_lbl: 'ফেসবুক পেজ লিংক',
+        f_link_ph: 'facebook.com/yourpage',
+        f_phone_lbl: 'ফোন নম্বর *',
+        f_phone_ph: '01XXXXXXXXX',
+        f_goal_lbl: 'আপনার মূল লক্ষ্য',
+        f_g1: 'সম্পূর্ণ অল-ইন-ওয়ান পেজ ম্যানেজমেন্ট (৩,০০০ টাকা/মাস)',
+        f_g2: 'লাক্সারি অ্যাড ডিজাইন ও ভাইরাল ডেইলি রিলস',
+        f_g3: '২৪/৭ ইনবক্স রিপ্লাই ও কল সেন্টার অর্ডার কনফার্মেশন',
+        f_g4: 'প্রতিদিনের সেলস ও ব্র্যান্ড প্রেজেন্টেশন বৃদ্ধি',
+        f_submit: 'রিকোয়েস্ট পাঠিয়ে হোয়াটসঅ্যাপে ট্রায়াল শুরু করুন',
+        f_err: 'অনুগ্রহ করে আপনার নাম, ব্যবসা/পেজের নাম এবং ফোন নম্বর পূরণ করুন।',
+
+        conf_t: 'হোয়াটসঅ্যাপ মেসেজ প্রস্তুত!',
+        conf_d: 'আপনার ৩ দিনের ফ্রি ট্রায়াল রিকোয়েস্ট হোয়াটসঅ্যাপের (01516120012) জন্য তৈরি হয়েছে। চাইলে সরাসরি ফেসবুকেও মেসেজ দিতে পারেন।',
+        conf_wa: 'আবার হোয়াটসঅ্যাপ ওপেন করুন',
+        conf_fb: 'ফেসবুকে ইনবক্স করুন',
+
+        foot_desc: 'আপনি ব্যবসায় মনোযোগ দিন, আপনার পেজ সামলাবো আমরা। ঢাকা, বাংলাদেশে আপনার প্রিমিয়াম ক্রিয়েটিভ অ্যাড স্টুডিও ও ই-বিজনেস পার্টনার।',
+        foot_nav_t: 'নেভিগেশন',
+        foot_contact_t: 'ভিআইপি সরাসরি যোগাযোগ',
+        foot_fb: 'ফেসবুক পেজ: VeloDesk অফিশিয়াল →',
+        foot_copy: '© ২০২৬ VeloDesk • ই-বিজনেস ও সাপোর্ট পার্টনার। সর্বস্বত্ব সংরক্ষিত।',
+        foot_loc: 'ঢাকা, বাংলাদেশ • অল-ইন-ওয়ান ৩,০০০ টাকা / মাস',
+        dock_wa: 'হোয়াটসঅ্যাপ',
+        toast_msg: 'আপনার ৩ দিনের ফ্রি ট্রায়াল রিকোয়েস্ট নিয়ে হোয়াটসঅ্যাপ ওপেন হচ্ছে...'
+      }
+    };
+
+    let activeLang = 'en';
+    let transformMode = 'after';
+
+    /**
+     * Translates the entire interface between English and Bengali
+     */
+    function setLanguage(lang) {
+      if (!I18N[lang]) return;
+      activeLang = lang;
+      const dict = I18N[lang];
+
+      document.body.classList.toggle('lang-bn', lang === 'bn');
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.textContent = dict[key];
+      });
+
+      document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (dict[key]) el.setAttribute('placeholder', dict[key]);
+      });
+
+      // Update toggle pill active visuals
+      const btnEn = document.getElementById('btn-lang-en');
+      const btnBn = document.getElementById('btn-lang-bn');
+      if (lang === 'en') {
+        btnEn.className = 'px-2.5 sm:px-3 py-1 text-xs font-extrabold rounded-full transition-all bg-cyanx text-void-950 shadow-cyan-luxe';
+        btnBn.className = 'px-2.5 sm:px-3 py-1 text-xs font-extrabold rounded-full transition-all text-white hover:text-cyanx';
+      } else {
+        btnBn.className = 'px-2.5 sm:px-3 py-1 text-xs font-extrabold rounded-full transition-all bg-cyanx text-void-950 shadow-cyan-luxe';
+        btnEn.className = 'px-2.5 sm:px-3 py-1 text-xs font-extrabold rounded-full transition-all text-white hover:text-cyanx';
+      }
+
+      // Re-sync Before/After dynamic copy in the selected language
+      setTransformMode(transformMode);
+    }
+
+    /**
+     * Switches "The VeloDesk Effect" Before vs. After comparison
+     */
+    function setTransformMode(mode) {
+      transformMode = mode;
+      const dict = I18N[activeLang];
+      const btnBefore = document.getElementById('btn-mode-before');
+      const btnAfter = document.getElementById('btn-mode-after');
+      const card = document.getElementById('transform-card');
+      const badge = document.getElementById('transform-badge');
+      const heading = document.getElementById('transform-heading');
+
+      if (mode === 'before') {
+        btnBefore.className = 'px-5 sm:px-7 py-3 rounded-xl text-xs sm:text-sm font-extrabold transition-all bg-red-500/25 border border-red-400/60 text-red-200';
+        btnAfter.className = 'px-5 sm:px-7 py-3 rounded-xl text-xs sm:text-sm font-extrabold transition-all text-[#E2E8F0] hover:text-white';
+        card.className = 'luxe-glass rounded-[2rem] p-6 sm:p-10 border border-red-400/40 shadow-obsidian-deep transition-all duration-500';
+        badge.className = 'inline-block px-3 py-1 rounded-full bg-red-500/20 border border-red-400/50 text-red-200 text-xs font-extrabold uppercase tracking-wider mb-2';
+        badge.textContent = dict.eff_before_badge;
+        heading.textContent = dict.eff_before_h;
+        document.getElementById('eff-v1').textContent = dict.eff_before_1;
+        document.getElementById('eff-v2').textContent = dict.eff_before_2;
+        document.getElementById('eff-v3').textContent = dict.eff_before_3;
+        document.getElementById('eff-v4').textContent = dict.eff_before_4;
+      } else {
+        btnAfter.className = 'px-5 sm:px-7 py-3 rounded-xl text-xs sm:text-sm font-extrabold transition-all bg-gradient-to-r from-cyanx to-gold text-void-950 shadow-cyan-luxe';
+        btnBefore.className = 'px-5 sm:px-7 py-3 rounded-xl text-xs sm:text-sm font-extrabold transition-all text-[#E2E8F0] hover:text-white';
+        card.className = 'luxe-glass rounded-[2rem] p-6 sm:p-10 border border-cyanx/45 shadow-cyan-luxe transition-all duration-500';
+        badge.className = 'inline-block px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/50 text-emerald-300 text-xs font-extrabold uppercase tracking-wider mb-2';
+        badge.textContent = dict.eff_after_badge;
+        heading.textContent = dict.eff_after_h;
+        document.getElementById('eff-v1').textContent = dict.eff_after_1;
+        document.getElementById('eff-v2').textContent = dict.eff_after_2;
+        document.getElementById('eff-v3').textContent = dict.eff_after_3;
+        document.getElementById('eff-v4').textContent = dict.eff_after_4;
+      }
+    }
+
+    /**
+     * Non-blocking sleek toast notification
+     */
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const txt = document.getElementById('toast-text');
+      if (!toast || !txt) return;
+      txt.textContent = msg;
+      toast.classList.remove('toast-hidden');
+      toast.classList.add('toast-visible');
+      setTimeout(() => {
+        toast.classList.remove('toast-visible');
+        toast.classList.add('toast-hidden');
+      }, 4000);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        // 1. Mobile Navigation Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconOpen = document.getElementById('icon-menu-open');
+        const iconClose = document.getElementById('icon-menu-close');
+
+        if (mobileBtn && mobileMenu) {
+          mobileBtn.addEventListener('click', () => {
+            const hidden = mobileMenu.classList.toggle('hidden');
+            mobileBtn.setAttribute('aria-expanded', String(!hidden));
+            iconOpen.classList.toggle('hidden', !hidden);
+            iconClose.classList.toggle('hidden', hidden);
+          });
+          document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+            link.addEventListener('click', () => {
+              mobileMenu.classList.add('hidden');
+              mobileBtn.setAttribute('aria-expanded', 'false');
+              iconOpen.classList.remove('hidden');
+              iconClose.classList.add('hidden');
+            });
+          });
+        }
+
+        // 2. Interactive "Inside Our Creative Studio" 4-Tab Switcher
+        const tabBtns = document.querySelectorAll('.studio-tab-btn');
+        const panels = document.querySelectorAll('.studio-panel');
+        tabBtns.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const target = btn.getAttribute('data-tab');
+            tabBtns.forEach((b) => {
+              const isAct = b === btn;
+              b.setAttribute('data-active', String(isAct));
+              b.setAttribute('aria-selected', String(isAct));
+            });
+            panels.forEach((panel) => {
+              panel.classList.toggle('hidden', panel.id !== `panel-${target}`);
+            });
+          });
+        });
+
+        // 3. Mouse-Tracking Radial Spotlight Glow on Luxury Cards
+        document.querySelectorAll('.spotlight-card').forEach((card) => {
+          card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            card.style.setProperty('--mouse-x', `${x}%`);
+            card.style.setProperty('--mouse-y', `${y}%`);
+          });
+        });
+
+        // 4. Subtle 3D Tilt on Desktop Hero Command Suite
+        const cmdCard = document.getElementById('hero-command-card');
+        if (cmdCard && window.matchMedia('(pointer: fine)').matches) {
+          cmdCard.addEventListener('mousemove', (e) => {
+            const rect = cmdCard.getBoundingClientRect();
+            const rotateY = (((e.clientX - rect.left) / rect.width) - 0.5) * 10;
+            const rotateX = (((e.clientY - rect.top) / rect.height) - 0.5) * -10;
+            cmdCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+          });
+          cmdCard.addEventListener('mouseleave', () => {
+            cmdCard.style.transform = 'rotateX(0deg) rotateY(0deg)';
+          });
+        }
+
+        // 5. FAQ Accordion
+        document.querySelectorAll('.faq-trigger').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const item = btn.closest('.faq-item');
+            const body = item.querySelector('.faq-body');
+            const isOpen = item.getAttribute('data-open') === 'true';
+
+            document.querySelectorAll('.faq-item').forEach((other) => {
+              other.setAttribute('data-open', 'false');
+              other.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+              other.querySelector('.faq-body').classList.add('hidden');
+            });
+
+            if (!isOpen) {
+              item.setAttribute('data-open', 'true');
+              btn.setAttribute('aria-expanded', 'true');
+              body.classList.remove('hidden');
+            }
+          });
+        });
+
+        // 6. Concierge 3-Day Free Trial Form -> Direct WhatsApp Launch
+        const form = document.getElementById('trial-form');
+        const formError = document.getElementById('form-error');
+        const formConf = document.getElementById('form-confirmation');
+        const confWaLink = document.getElementById('conf-wa-link');
+
+        if (form) {
+          form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('f-name').value.trim();
+            const business = document.getElementById('f-business').value.trim();
+            const pageLink = document.getElementById('f-pagelink').value.trim();
+            const phone = document.getElementById('f-phone').value.trim();
+            const goal = document.getElementById('f-goal').value;
+
+            if (!name || !business || !phone) {
+              formError.textContent = I18N[activeLang].f_err;
+              formError.classList.remove('hidden');
+              return;
+            }
+            formError.classList.add('hidden');
+
+            const lines = [
+              'Hello VeloDesk! I would like to start my 3 Days Free Trial (ALL-IN-ONE • 3,000 BDT / Month).',
+              '================================',
+              `Name: ${name}`,
+              `Business / Page: ${business}`,
+              pageLink ? `Facebook Page Link: ${pageLink}` : '',
+              `Phone: ${phone}`,
+              `Primary Goal: ${goal}`
+            ].filter(Boolean);
+
+            const waUrl = `https://wa.me/${VELODESK.whatsappIntl}?text=${encodeURIComponent(lines.join('\n'))}`;
+            confWaLink.href = waUrl;
+            formConf.classList.remove('hidden');
+            showToast(I18N[activeLang].toast_msg);
+
+            window.open(waUrl, '_blank', 'noopener,noreferrer');
+          });
+        }
+
+        // 7. Smooth Scroll Reveal Animations
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal-section').forEach((sec) => observer.observe(sec));
+      } catch (err) {
+        console.error('VeloDesk init error:', err);
+      }
+    });
+  </script>
+</body>
+</html>
